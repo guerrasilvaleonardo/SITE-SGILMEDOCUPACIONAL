@@ -182,7 +182,7 @@ export default function Home() {
       <section className="secao secao-escura">
         <div className="wrap hero-grade">
           <div className="hero-texto">
-            <span className="rotulo" style={{ color: '#E5915A' }}>
+            <span className="rotulo" style={{ color: '#4CAC5E' }}>
               NR-1 · fiscalização desde 26 de maio de 2026
             </span>
             <h2>Seu PGR já tem o inventário psicossocial?</h2>
@@ -196,7 +196,7 @@ export default function Home() {
             <Link className="btn btn-claro" href="/riscos-psicossociais-nr1">
               Ver como funciona a adequação
             </Link>
-            <span style={{ fontSize: 14, color: '#8496A6' }}>
+            <span style={{ fontSize: 14, color: '#A9C8D8' }}>
               Diagnóstico inicial sem custo para empresas de Porto Velho.
             </span>
           </div>

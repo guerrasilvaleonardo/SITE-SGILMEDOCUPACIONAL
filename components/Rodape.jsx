@@ -9,7 +9,7 @@ export default function Rodape() {
         <div className="rodape-grade">
           <div>
             <div className="rodape-marca">
-              ÁgilMed<span style={{ color: '#1573BE' }}>.</span>
+              ÁgilMed<span style={{ color: '#4CAC5E' }}>.</span>
             </div>
             <p style={{ marginTop: 12, lineHeight: 1.6 }}>
               Clínica de medicina do trabalho e saúde ocupacional em Porto Velho. Exames, PCMSO,
