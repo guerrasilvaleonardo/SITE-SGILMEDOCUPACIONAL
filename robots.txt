@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /obrigado
+
+Host: https://www.agilmedocupacional.com.br
+Sitemap: https://www.agilmedocupacional.com.br/sitemap.xml
