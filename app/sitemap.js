@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { site } from '@/lib/site';
 import { exames, urlExame } from '@/lib/exames';
 import { programas } from '@/lib/programas';

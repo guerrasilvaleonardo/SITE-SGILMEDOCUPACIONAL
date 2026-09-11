@@ -3,6 +3,10 @@
 import { useState } from 'react';
 import { site, whatsappUrl } from '@/lib/site';
 
+// Na versão estática (publicada por arrastar a pasta na Vercel) não existe rota de API:
+// o formulário monta a mensagem e abre o WhatsApp, em vez de deixar o envio quebrado.
+const MODO_ESTATICO = process.env.NEXT_PUBLIC_MODO_ESTATICO === '1';
+
 export default function Formulario({
   origem,
   campos = ['empresa', 'nome', 'email', 'telefone'],
@@ -20,6 +24,25 @@ export default function Formulario({
     const form = new FormData(evento.currentTarget);
     const dados = Object.fromEntries(form.entries());
     dados.origem = origem;
+
+    if (MODO_ESTATICO) {
+      const rotulos = {
+        empresa: 'Empresa',
+        cnpj: 'CNPJ',
+        nome: 'Nome',
+        email: 'E-mail',
+        telefone: 'Telefone',
+        colaboradores: 'Colaboradores',
+        mensagem: 'Mensagem',
+      };
+      const linhas = Object.entries(rotulos)
+        .filter(([chave]) => dados[chave])
+        .map(([chave, rotulo]) => `${rotulo}: ${dados[chave]}`);
+      const texto = `Olá! Vim pelo site (${origem}).\n\n${linhas.join('\n')}`;
+      window.open(whatsappUrl(texto), '_blank', 'noopener');
+      setEstado('enviado');
+      return;
+    }
 
     try {
       const resposta = await fetch('/api/lead', {

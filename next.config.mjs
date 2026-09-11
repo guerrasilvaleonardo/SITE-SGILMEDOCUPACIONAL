@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
+const estatico = process.env.EXPORT_ESTATICO === '1';
+
 const nextConfig = {
+  // EXPORT_ESTATICO=1 gera a pasta out/ para publicar arrastando na Vercel.
+  ...(estatico ? { output: 'export', images: { unoptimized: true } } : {}),
   trailingSlash: false,
   poweredByHeader: false,
   eslint: { ignoreDuringBuilds: true },
-  async headers() {
+  ...(estatico ? {} : { async headers() {
     return [
       {
         source: '/:path*',
@@ -15,7 +19,7 @@ const nextConfig = {
         ],
       },
     ];
-  },
+  } }),
 };
 
 export default nextConfig;
