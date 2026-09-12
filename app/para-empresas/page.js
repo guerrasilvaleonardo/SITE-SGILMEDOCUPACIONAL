@@ -56,7 +56,7 @@ export default function ParaEmpresas() {
               ['Riscos psicossociais', 'Avaliação por psicólogo e programa contínuo, como a NR-1 passou a exigir das empresas.'],
               ['eSocial SST', 'S-2220 e S-2240 preparados e transmitidos no prazo, mediante procuração.'],
               ['Gestão de afastados', 'Retorno ao trabalho, restrições, readaptação e acompanhamento dos casos abertos.'],
-              ['Boletim mensal', 'Uma página, todo dia 5, com o que vence nos próximos 90 dias.'],
+              ['Boletim mensal', 'Benefício para CNPJs clientes: uma página, todo dia 5, com o que vence nos próximos 90 dias.'],
             ].map(([t, d]) => (
               <div className="cartao" key={t}>
                 <h3>{t}</h3>

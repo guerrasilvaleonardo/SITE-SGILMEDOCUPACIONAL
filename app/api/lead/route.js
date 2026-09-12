@@ -37,6 +37,13 @@ export async function POST(request) {
     );
   }
 
+  if (origem === 'boletim' && !cnpj) {
+    return Response.json(
+      { ok: false, erro: 'Informe o CNPJ cliente para solicitar a ativação do boletim.' },
+      { status: 400 },
+    );
+  }
+
   const linhas = [
     `Origem: ${origem}`,
     `Nome: ${nome}`,

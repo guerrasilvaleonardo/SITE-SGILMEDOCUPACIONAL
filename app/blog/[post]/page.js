@@ -5,6 +5,23 @@ import { site, metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
 
+function dadosAutora(post) {
+  if (post.autora === 'clinica') {
+    return {
+      ...site.medicaClinica,
+      funcao: 'Médica Clínica',
+      iniciais: 'CS',
+      bio: 'Médica clínica da ÁgilMed Ocupacional, com atuação em avaliação clínica e orientação preventiva em saúde.',
+    };
+  }
+  return {
+    ...site.responsavelTecnico,
+    funcao: 'Médica do Trabalho',
+    iniciais: 'FC',
+    bio: 'Médica do Trabalho e responsável técnica pelos conteúdos ocupacionais da ÁgilMed Ocupacional, em Porto Velho.',
+  };
+}
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -22,6 +39,7 @@ export function generateMetadata({ params }) {
 }
 
 function jsonLdArtigo(post) {
+  const autora = dadosAutora(post);
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -33,7 +51,7 @@ function jsonLdArtigo(post) {
     mainEntityOfPage: `${site.url}/blog/${post.slug}`,
     author: {
       '@type': 'Person',
-      name: site.responsavelTecnico.nome,
+      name: autora.nome,
     },
     publisher: {
       '@type': 'Organization',
@@ -82,6 +100,7 @@ function Bloco({ bloco }) {
 export default function Post({ params }) {
   const post = getPost(params.post);
   if (!post) notFound();
+  const autora = dadosAutora(post);
 
   const trilha = [
     { href: '/', rotulo: 'Início' },
@@ -110,12 +129,12 @@ export default function Post({ params }) {
             </p>
             <div className="assinatura">
               <div className="assinatura-avatar" aria-hidden="true">
-                AM
+                {autora.iniciais}
               </div>
               <div>
-                <div style={{ fontWeight: 600 }}>{site.responsavelTecnico.nome}</div>
+                <div style={{ fontWeight: 600 }}>{autora.nome}</div>
                 <div style={{ fontSize: 14, color: 'var(--tinta-3)' }}>
-                  Responsável técnico · {site.responsavelTecnico.registro}
+                  {autora.funcao} · {autora.registro}
                 </div>
               </div>
             </div>
@@ -129,16 +148,15 @@ export default function Post({ params }) {
 
           <aside className="caixa-autor">
             <div className="assinatura-avatar" aria-hidden="true">
-              AM
+              {autora.iniciais}
             </div>
             <div>
-              <h3>{site.responsavelTecnico.nome}</h3>
+              <h3>{autora.nome}</h3>
               <p className="mono" style={{ fontSize: 13, color: 'var(--azul)', margin: '4px 0 8px' }}>
-                {site.responsavelTecnico.registro}
+                {autora.funcao} · {autora.registro}
               </p>
               <p style={{ fontSize: 16, color: 'var(--tinta-3)', margin: 0 }}>
-                Responsável técnico pelos conteúdos clínicos da ÁgilMed Ocupacional, clínica de
-                medicina do trabalho em Porto Velho.
+                {autora.bio}
               </p>
             </div>
           </aside>

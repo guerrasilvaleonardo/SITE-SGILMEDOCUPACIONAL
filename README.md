@@ -59,6 +59,7 @@ app/
   programas-e-laudos/           PCMSO, eSocial SST, gestão de afastados
   riscos-psicossociais-nr1/     Landing da oferta conjunta com a Real Life
   para-empresas/                Gestão de SST e pedido de proposta
+  para-voce/                    Atendimento clínico para a sociedade
   boletim/                      Boletim de Antecedência (captação por CNPJ)
   blog/ e blog/[post]/          Blog e artigos
   sobre/ contato/ agendamento/  Institucional
@@ -77,6 +78,10 @@ components/      Cabeçalho, rodapé, formulário e blocos reaproveitados
 Cada artigo é um objeto em `lib/posts.js`. Copie o que já existe, troque `slug`, `titulo`,
 `descricao`, `data` e os blocos de `corpo` (`p`, `h2`, `destaque`, `lista`, `lista-numerada`).
 O sitemap e a listagem do blog se atualizam sozinhos.
+
+Defina também `autora: 'trabalho'` para conteúdos de saúde ocupacional, ASO, PCMSO e normas,
+assinados pela Dra. Francynelle; ou `autora: 'clinica'` para prevenção e saúde geral, assinados
+pela Dra. Camila. Nome, CRM, RQE, função, iniciais e biografia são exibidos automaticamente.
 
 ## Como adicionar uma página de exame
 

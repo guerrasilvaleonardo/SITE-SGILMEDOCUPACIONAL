@@ -48,7 +48,9 @@ export default function Rodape() {
             © {ano} {site.nome}. Todos os direitos reservados.
           </div>
           <div>
-            Responsável técnico: {site.responsavelTecnico.nome} · {site.responsavelTecnico.registro}
+            Responsável técnica — Medicina do Trabalho: {site.responsavelTecnico.nome} · {site.responsavelTecnico.registro}
+            <br />
+            Médica clínica: {site.medicaClinica.nome} · {site.medicaClinica.registro}
           </div>
           <div>
             <a href={site.instagram} target="_blank" rel="noopener noreferrer">

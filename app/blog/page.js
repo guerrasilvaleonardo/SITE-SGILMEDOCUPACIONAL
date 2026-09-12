@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { posts } from '@/lib/posts';
-import { metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
+import { site, metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
 
@@ -41,6 +41,9 @@ export default function Blog() {
               <span className="chip">{p.territorio}</span>
               <h3 style={{ fontSize: 21, marginTop: 6 }}>{p.titulo}</h3>
               <p>{p.resumo}</p>
+              <span style={{ fontSize: 13, color: 'var(--tinta-4)' }}>
+                Por {p.autora === 'clinica' ? site.medicaClinica.nome : site.responsavelTecnico.nome}
+              </span>
               <span className="cartao-seta">
                 {p.dataTexto} · {p.leitura}
               </span>

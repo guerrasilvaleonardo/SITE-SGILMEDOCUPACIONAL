@@ -25,6 +25,12 @@ export default function Formulario({
     const dados = Object.fromEntries(form.entries());
     dados.origem = origem;
 
+    if (origem === 'boletim' && !String(dados.cnpj || '').trim()) {
+      setEstado('parado');
+      setErro('Informe o CNPJ cliente para solicitar a ativação do boletim.');
+      return;
+    }
+
     if (MODO_ESTATICO) {
       const rotulos = {
         empresa: 'Empresa',
@@ -89,8 +95,8 @@ export default function Formulario({
 
       {campos.includes('cnpj') && (
         <div className="campo">
-          <label htmlFor={`${origem}-cnpj`}>CNPJ</label>
-          <input id={`${origem}-cnpj`} name="cnpj" type="text" inputMode="numeric" placeholder="00.000.000/0001-00" />
+          <label htmlFor={`${origem}-cnpj`}>{origem === 'boletim' ? 'CNPJ cliente da ÁgilMed' : 'CNPJ'}</label>
+          <input id={`${origem}-cnpj`} name="cnpj" type="text" inputMode="numeric" placeholder="00.000.000/0001-00" required={origem === 'boletim'} />
         </div>
       )}
 
@@ -142,7 +148,9 @@ export default function Formulario({
       </button>
 
       <p className="form-nota">
-        Usamos seus dados apenas para responder a este contato.
+        {origem === 'boletim'
+          ? 'Disponível exclusivamente para empresas com cadastro ativo na ÁgilMed. O CNPJ será validado antes da ativação.'
+          : 'Usamos seus dados apenas para responder a este contato.'}
       </p>
     </form>
   );

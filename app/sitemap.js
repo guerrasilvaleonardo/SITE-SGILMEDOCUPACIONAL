@@ -15,6 +15,7 @@ export default function sitemap() {
     { url: '/riscos-psicossociais-nr1', priority: 0.9 },
     { url: '/para-empresas', priority: 0.9 },
     { url: '/boletim', priority: 0.8 },
+    { url: '/para-voce', priority: 0.9 },
     { url: '/sobre', priority: 0.5 },
     { url: '/contato', priority: 0.6 },
     { url: '/agendamento', priority: 0.7 },

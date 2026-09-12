@@ -44,7 +44,7 @@ export default function Contato() {
                 <div className="linha-essencial">
                   <dt>Telefone</dt>
                   <dd>
-                    <a href={`tel:+${site.telefoneRaw}`}>{site.telefone}</a> · {site.telefone2}
+                    <a href={`tel:+${site.telefoneRaw}`}>{site.telefone}</a>
                   </dd>
                 </div>
                 <div className="linha-essencial">

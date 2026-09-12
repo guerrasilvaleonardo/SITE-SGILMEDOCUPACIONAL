@@ -3,9 +3,9 @@ import { site, whatsappUrl } from '@/lib/site';
 import Check from '@/components/Check';
 
 export const metadata = {
-  title: 'Medicina do trabalho em Porto Velho',
+  title: 'Saúde ocupacional e atendimento clínico em Porto Velho',
   description:
-    'Exames ocupacionais, ASO no mesmo dia, PCMSO e riscos psicossociais em Porto Velho. Equipe multidisciplinar e um aviso mensal com o que vence nos próximos 90 dias.',
+    'Medicina do trabalho para empresas e atendimento clínico para pessoas em Porto Velho. Exames ocupacionais, PCMSO, prevenção e cuidado médico.',
   alternates: { canonical: '/' },
 };
 
@@ -72,19 +72,19 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grade">
           <div className="hero-texto">
-            <span className="rotulo">Medicina do trabalho · Porto Velho</span>
-            <h1>Antes que vire problema.</h1>
+            <span className="rotulo">Empresas e pessoas · Porto Velho</span>
+            <h1>Cuidado para sua empresa. Saúde para você.</h1>
             <p className="lede">
-              Exame, programa, laudo e avaliação psicossocial na mesma casa — e um aviso todo mês com o
-              que vence nos próximos 90 dias. Você não precisa lembrar de nada.
+              Saúde ocupacional para empresas e atendimento clínico para a sociedade, com orientação
+              clara, equipe qualificada e facilidade para agendar.
             </p>
             <div className="acoes">
-              <Link className="btn btn-primario" href="/boletim">
-                Receba o Boletim do seu CNPJ
+              <Link className="btn btn-primario" href="/para-voce">
+                Quero atendimento clínico
               </Link>
-              <span style={{ fontSize: 15, color: 'var(--tinta-3)' }}>
-                Grátis, uma página, todo dia 5.
-              </span>
+              <Link className="btn btn-secundario" href="/para-empresas">
+                Soluções para empresas
+              </Link>
             </div>
           </div>
 
@@ -133,14 +133,14 @@ export default function Home() {
             <h2>A clínica comum entrega o exame. Nós entregamos a antecedência.</h2>
             <div className="texto">
               <p>
-                Todo dia 5 você recebe uma página com o que vence nos próximos 90 dias: programas,
-                periódicos por setor, treinamentos de NR, toxicológicos e ASOs. Nada de procurar no
-                arquivo, nada de descobrir na fiscalização.
+                Empresas clientes da ÁgilMed recebem, todo dia 5, uma página com o que vence nos
+                próximos 90 dias: programas, periódicos por setor, treinamentos de NR, toxicológicos
+                e ASOs. Nada de procurar no arquivo ou descobrir o prazo na fiscalização.
               </p>
             </div>
             <div className="acoes">
               <Link className="btn btn-primario" href="/boletim">
-                Receba o Boletim do seu CNPJ
+                Ver benefício exclusivo
               </Link>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function Home() {
       <section className="secao secao-fundo">
         <div className="wrap">
           <div className="secao-cabeca">
-            <h2>O que a sua empresa precisa</h2>
+            <h2>Soluções para empresas</h2>
           </div>
           <div className="grade g4">
             {servicos.map((s) => (
@@ -175,6 +175,35 @@ export default function Home() {
                 <span className="cartao-seta">Ver detalhes →</span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="secao">
+        <div className="wrap hero-grade">
+          <div className="hero-texto">
+            <span className="rotulo">Para você e sua família</span>
+            <h2>Atendimento clínico próximo, claro e acessível.</h2>
+            <div className="texto">
+              <p>
+                A Agilmed também atende pessoas que procuram avaliação médica, orientação preventiva
+                e acompanhamento clínico em Porto Velho — mesmo sem vínculo com uma empresa cliente.
+              </p>
+            </div>
+            <div className="acoes">
+              <Link className="btn btn-primario" href="/para-voce">
+                Conhecer o atendimento
+              </Link>
+            </div>
+          </div>
+          <div className="cartao" style={{ padding: 30, background: 'var(--fundo-verde)' }}>
+            <span className="rotulo">Atendimento clínico</span>
+            <h3 style={{ fontSize: 24 }}>Dra. Camila Sousa Ferreira</h3>
+            <p>CRM-RO 9772 · Medicina Clínica</p>
+            <p>
+              Consulta com escuta cuidadosa, avaliação individual e orientação para os próximos passos
+              do cuidado.
+            </p>
           </div>
         </div>
       </section>
@@ -281,11 +310,11 @@ export default function Home() {
           <div className="cta-bloco">
             <div>
               <h2>Comece sabendo o que já está vencendo.</h2>
-              <p>Mande o CNPJ e devolvemos o primeiro Boletim de Antecedência da sua empresa.</p>
+              <p>Já é cliente? Informe o CNPJ para validarmos o cadastro e ativarmos o boletim.</p>
             </div>
             <div className="acoes">
               <Link className="btn btn-claro" href="/boletim">
-                Receba o Boletim do seu CNPJ
+                Solicitar ativação
               </Link>
             </div>
           </div>
