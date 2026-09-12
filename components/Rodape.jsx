@@ -12,10 +12,9 @@ export default function Rodape() {
             <div className="rodape-marca">
               ÁgilMed<span style={{ color: '#4CAC5E' }}>.</span>
             </div>
-            <RedesSociais />
             <p style={{ marginTop: 12, lineHeight: 1.6 }}>
-              Clínica de medicina do trabalho e saúde ocupacional em Porto Velho. Exames, PCMSO,
-              riscos psicossociais e gestão de SST com equipe multidisciplinar.
+              Medicina do trabalho para empresas e atendimento clínico para a sociedade, em Porto
+              Velho. Exames, PCMSO, riscos psicossociais e consulta clínica.
             </p>
             <p style={{ marginTop: 16, lineHeight: 1.7 }}>
               {site.endereco.rua}
@@ -29,6 +28,9 @@ export default function Rodape() {
               <br />
               <a href={`mailto:${site.email}`}>{site.email}</a>
             </p>
+
+            <h4 style={{ marginTop: 24 }}>Acompanhe a ÁgilMed</h4>
+            <RedesSociais />
           </div>
 
           {rodapeLinks.map((coluna) => (
@@ -50,7 +52,8 @@ export default function Rodape() {
             © {ano} {site.nome}. Todos os direitos reservados.
           </div>
           <div>
-            Responsável técnica — Medicina do Trabalho: {site.responsavelTecnico.nome} · {site.responsavelTecnico.registro}
+            Responsável técnica — Medicina do Trabalho: {site.responsavelTecnico.nome} ·{' '}
+            {site.responsavelTecnico.registro}
             <br />
             Médica clínica: {site.medicaClinica.nome} · {site.medicaClinica.registro}
           </div>
