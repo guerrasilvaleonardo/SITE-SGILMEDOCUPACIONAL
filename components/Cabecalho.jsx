@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { navegacao, site } from '@/lib/site';
-import RedesSociais from '@/components/RedesSociais';
 
 export default function Cabecalho() {
   return (
@@ -12,7 +11,6 @@ export default function Cabecalho() {
             <Image src="/logo-agilmed.webp" alt="" width={53} height={40} priority />
             <span className="marca-nome">Ágil<span>Med</span></span>
           </Link>
-          <RedesSociais compacto />
           <nav className="menu" aria-label="Principal">
             {navegacao.map((item) => (
               <Link key={item.href} href={item.href}>

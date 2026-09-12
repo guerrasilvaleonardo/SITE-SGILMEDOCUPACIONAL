@@ -138,7 +138,7 @@ img { max-width: 100%; height: auto; }
   gap: 10px;
 }
 .marca img { width: 53px; height: 40px; object-fit: contain; }
-.marca-nome { color: var(--azul); }
+.marca-nome { color: var(--azul); white-space: nowrap; }
 .marca-nome span { color: var(--verde); }
 .marca:hover { text-decoration: none; color: var(--azul-escuro); }
 .redes-sociais { display: flex; align-items: center; gap: 9px; }
@@ -197,6 +197,80 @@ img { max-width: 100%; height: auto; }
   border: 1px solid var(--linha);
   margin-bottom: 8px;
 }
+
+/* ---------- catálogo de exames clínicos ---------- */
+.busca-exames {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--linha-forte);
+  border-radius: 12px;
+  box-shadow: 0 12px 34px rgba(29, 99, 165, .08);
+}
+.busca-exames label {
+  display: block;
+  margin-bottom: 9px;
+  font-family: var(--fonte-titulo), sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--tinta);
+}
+.busca-exames input {
+  width: 100%;
+  padding: 15px 17px;
+  border: 1px solid var(--linha-forte);
+  border-radius: 8px;
+  background: var(--papel);
+  color: var(--tinta);
+  font: inherit;
+  outline: none;
+}
+.busca-exames input:focus {
+  border-color: var(--azul-claro);
+  box-shadow: 0 0 0 3px rgba(49, 161, 216, .14);
+}
+.busca-exames > span {
+  display: block;
+  margin-top: 9px;
+  font-family: var(--fonte-mono), monospace;
+  font-size: 12px;
+  color: var(--tinta-4);
+  text-align: right;
+}
+.grade-exames {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.exame-item {
+  min-height: 76px;
+  padding: 16px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--tinta);
+  background: #fff;
+  border: 1px solid var(--linha);
+  border-radius: 9px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.exame-item strong { font-size: 15px; line-height: 1.35; }
+.exame-item > a { font-family: var(--fonte-mono), monospace; font-size: 12px; color: var(--verde); font-weight: 600; }
+.exame-item details { width: 100%; border-top: 1px solid var(--linha); padding-top: 9px; }
+.exame-item summary { cursor: pointer; color: var(--azul); font-size: 13px; font-weight: 600; }
+.exame-item details p { margin: 10px 0 6px; font-size: 14px; line-height: 1.5; color: var(--tinta-3); }
+.exame-item details small { display: block; font-size: 12px; line-height: 1.45; color: var(--tinta-4); }
+.exame-item:hover {
+  color: var(--azul);
+  border-color: var(--azul-claro);
+  box-shadow: 0 9px 24px rgba(29, 99, 165, .09);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+.perfil-medico { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: 18px; }
 
 /* ---------- hero ---------- */
 .hero {
@@ -433,6 +507,9 @@ img { max-width: 100%; height: auto; }
 }
 .rodape ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
 .rodape-marca { font-family: var(--fonte-titulo), sans-serif; font-weight: 700; font-size: 21px; color: #fff; }
+.rodape .redes-sociais { margin-top: 14px; }
+.rodape .redes-sociais a { color: #fff; background: transparent; border-color: #41627D; }
+.rodape .redes-sociais a:hover { background: var(--verde); border-color: var(--verde); }
 .rodape-base {
   border-top: 1px solid #26394B;
   margin-top: 40px;
@@ -479,6 +556,7 @@ img { max-width: 100%; height: auto; }
   .rodape-grade { grid-template-columns: repeat(2, 1fr); gap: 30px; }
   .cta-bloco { flex-direction: column; align-items: flex-start; padding: 32px 26px; }
   .menu { display: none; }
+  .grade-exames { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 600px) {
@@ -495,6 +573,10 @@ img { max-width: 100%; height: auto; }
   .acoes .btn { width: 100%; }
   .linha-essencial { flex-direction: column; gap: 2px; }
   .linha-essencial dd { text-align: left; }
+  .grade-exames { grid-template-columns: 1fr; }
+  .busca-exames { padding: 18px; }
+  .exame-item { min-height: 68px; }
+  .perfil-medico { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

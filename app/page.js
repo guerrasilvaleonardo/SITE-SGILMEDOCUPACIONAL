@@ -73,10 +73,10 @@ export default function Home() {
         <div className="wrap hero-grade">
           <div className="hero-texto">
             <span className="rotulo">Empresas e pessoas · Porto Velho</span>
-            <h1>Duas portas, um cuidado só.</h1>
+            <h1>Cuidado para sua empresa. Saúde para você.</h1>
             <p className="lede">
-              De um lado, a saúde ocupacional que mantém sua empresa em dia com as normas. Do outro,
-              a consulta clínica para quem precisa de atendimento. Mesma equipe, mesmo endereço.
+              Saúde ocupacional para empresas e atendimento clínico para a sociedade, com orientação
+              clara, equipe qualificada e facilidade para agendar.
             </p>
             <div className="acoes">
               <Link className="btn btn-primario" href="/para-voce">

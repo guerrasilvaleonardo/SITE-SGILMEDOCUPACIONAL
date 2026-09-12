@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { examesClinicos } from '@/lib/examesClinicos';
+import { examesClinicosDetalhados as examesClinicos } from '@/lib/examesClinicosDetalhados';
 import { whatsappUrl } from '@/lib/site';
 
 function normalizar(texto) {
@@ -12,7 +12,7 @@ export default function CatalogoExames() {
   const [busca, setBusca] = useState('');
   const exibidos = useMemo(() => {
     const termo = normalizar(busca.trim());
-    return termo ? examesClinicos.filter((nome) => normalizar(nome).includes(termo)) : examesClinicos;
+    return termo ? examesClinicos.filter((exame) => normalizar(exame.nome).includes(termo)) : examesClinicos;
   }, [busca]);
 
   return (
@@ -31,17 +31,22 @@ export default function CatalogoExames() {
 
       {exibidos.length ? (
         <div className="grade-exames">
-          {exibidos.map((nome) => (
-            <a
-              className="exame-item"
-              href={whatsappUrl(`Olá! Gostaria de confirmar disponibilidade, preparo e valor para o exame: ${nome}.`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={nome}
-            >
-              <strong>{nome}</strong>
-              <span>Consultar →</span>
-            </a>
+          {exibidos.map((exame) => (
+            <div className="exame-item" key={exame.nome}>
+              <strong>{exame.nome}</strong>
+              <details>
+                <summary>Saiba mais</summary>
+                <p>{exame.descricao}</p>
+                <small>Confirme o preparo, pois ele pode variar conforme o método e a orientação profissional.</small>
+              </details>
+              <a
+                href={whatsappUrl(`Olá! Gostaria de confirmar disponibilidade, preparo e valor para o exame: ${exame.nome}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Consultar e agendar →
+              </a>
+            </div>
           ))}
         </div>
       ) : (

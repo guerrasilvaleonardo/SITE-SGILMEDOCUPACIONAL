@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { site, rodapeLinks } from '@/lib/site';
+import RedesSociais from '@/components/RedesSociais';
 
 export default function Rodape() {
   const ano = new Date().getFullYear();
@@ -11,6 +12,7 @@ export default function Rodape() {
             <div className="rodape-marca">
               ÁgilMed<span style={{ color: '#4CAC5E' }}>.</span>
             </div>
+            <RedesSociais />
             <p style={{ marginTop: 12, lineHeight: 1.6 }}>
               Clínica de medicina do trabalho e saúde ocupacional em Porto Velho. Exames, PCMSO,
               riscos psicossociais e gestão de SST com equipe multidisciplinar.
@@ -53,10 +55,6 @@ export default function Rodape() {
             Médica clínica: {site.medicaClinica.nome} · {site.medicaClinica.registro}
           </div>
           <div>
-            <a href={site.instagram} target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-            {' · '}
             <Link href="/privacidade">Privacidade</Link>
           </div>
         </div>
