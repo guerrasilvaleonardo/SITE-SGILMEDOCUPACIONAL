@@ -70,6 +70,17 @@ export default function Cabecalho() {
           background: #fff; border: 1px solid var(--linha-forte); border-radius: 4px;
           box-shadow: 0 16px 40px rgba(14, 28, 43, .13); padding: 8px; z-index: 50;
         }
+        .am-sub-largo {
+          left: auto; right: -18px; min-width: 620px;
+          display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 14px;
+        }
+        .am-coluna > span {
+          display: block; padding: 4px 14px 8px;
+          font-family: var(--fonte-mono), monospace; font-size: 11px; letter-spacing: .12em;
+          text-transform: uppercase; color: var(--tinta-4);
+        }
+        .am-sub-largo .am-coluna + .am-coluna { border-left: 1px solid var(--linha); padding-left: 10px; }
+        .am-sub a.am-destaque strong { color: var(--azul); }
         .am-sub a {
           display: block; padding: 11px 14px; border-radius: 3px; text-decoration: none;
         }
@@ -128,7 +139,7 @@ export default function Cabecalho() {
         <div className="am-direita">
           <nav className="am-nav" aria-label="Principal">
             {navegacao.map((grupo) =>
-              grupo.itens ? (
+              grupo.itens || grupo.colunas ? (
                 <div key={grupo.rotulo}>
                   <button
                     type="button"
@@ -143,13 +154,30 @@ export default function Cabecalho() {
                   </button>
 
                   {aberto === grupo.rotulo && (
-                    <div className="am-sub">
-                      {grupo.itens.map((item) => (
-                        <Link key={item.href} href={item.href} onClick={fecharTudo}>
-                          <strong>{item.rotulo}</strong>
-                          {item.nota && <span>{item.nota}</span>}
-                        </Link>
-                      ))}
+                    <div className={`am-sub${grupo.colunas ? ' am-sub-largo' : ''}`}>
+                      {grupo.colunas
+                        ? grupo.colunas.map((coluna) => (
+                            <div className="am-coluna" key={coluna.titulo}>
+                              <span>{coluna.titulo}</span>
+                              {coluna.itens.map((item) => (
+                                <Link
+                                  key={item.href}
+                                  href={item.href}
+                                  className={item.destaque ? 'am-destaque' : undefined}
+                                  onClick={fecharTudo}
+                                >
+                                  <strong>{item.rotulo}</strong>
+                                  {item.nota && <span>{item.nota}</span>}
+                                </Link>
+                              ))}
+                            </div>
+                          ))
+                        : grupo.itens.map((item) => (
+                            <Link key={item.href} href={item.href} onClick={fecharTudo}>
+                              <strong>{item.rotulo}</strong>
+                              {item.nota && <span>{item.nota}</span>}
+                            </Link>
+                          ))}
                     </div>
                   )}
                 </div>
@@ -180,10 +208,10 @@ export default function Cabecalho() {
       <div className={`am-painel${painel ? ' aberto' : ''}`}>
         <div className="am-painel-interno">
           {navegacao.map((grupo) =>
-            grupo.itens ? (
+            grupo.itens || grupo.colunas ? (
               <div className="am-grupo" key={grupo.rotulo}>
                 <span>{grupo.rotulo}</span>
-                {grupo.itens.map((item) => (
+                {(grupo.colunas ? grupo.colunas.flatMap((c) => c.itens) : grupo.itens).map((item) => (
                   <Link key={item.href} href={item.href} onClick={fecharTudo}>
                     {item.rotulo}
                   </Link>

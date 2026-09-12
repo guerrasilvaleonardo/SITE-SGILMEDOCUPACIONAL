@@ -18,6 +18,7 @@ export default function sitemap() {
     { url: '/boletim', priority: 0.8 },
     { url: '/para-voce', priority: 0.9 },
     { url: '/exames-clinicos', priority: 0.9 },
+    { url: '/exames-laboratoriais-porto-velho', priority: 0.9 },
     { url: '/equipe', priority: 0.7 },
     { url: '/privacidade', priority: 0.3 },
     { url: '/sobre', priority: 0.5 },
