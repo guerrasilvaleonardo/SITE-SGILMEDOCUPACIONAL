@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { site, metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
@@ -34,6 +35,13 @@ export default function Sobre() {
             </p>
           </div>
           <div className="cartao" style={{ padding: 30, gap: 14 }}>
+            <Image
+              className="foto-estrutura"
+              src="/recepcao-agilmed.webp"
+              alt="Recepção da Agilmed Ocupacional em Porto Velho"
+              width={1024}
+              height={1024}
+            />
             <span className="rotulo">Onde estamos</span>
             <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--tinta)' }}>
               {site.endereco.rua}

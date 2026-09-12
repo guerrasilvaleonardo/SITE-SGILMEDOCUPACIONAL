@@ -152,6 +152,10 @@ export default function Formulario({
           ? 'Disponível exclusivamente para empresas com cadastro ativo na ÁgilMed. O CNPJ será validado antes da ativação.'
           : 'Usamos seus dados apenas para responder a este contato.'}
       </p>
+      <p className="form-nota">
+        Ao enviar, você concorda com o uso dos dados para retorno deste atendimento.{' '}
+        <a href="/privacidade">Leia a política de privacidade</a>.
+      </p>
     </form>
   );
 }

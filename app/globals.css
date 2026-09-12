@@ -126,15 +126,34 @@ img { max-width: 100%; height: auto; }
   min-height: 78px;
   padding-block: 12px;
 }
+.topo-esquerda { display: flex; align-items: center; gap: 22px; }
 .marca {
   font-family: var(--fonte-titulo), sans-serif;
   font-weight: 700;
   font-size: 21px;
   letter-spacing: -0.02em;
   color: var(--azul);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
+.marca img { width: 53px; height: 40px; object-fit: contain; }
+.marca-nome { color: var(--azul); }
+.marca-nome span { color: var(--verde); }
 .marca:hover { text-decoration: none; color: var(--azul-escuro); }
-.marca span { color: var(--verde); }
+.redes-sociais { display: flex; align-items: center; gap: 9px; }
+.redes-sociais a {
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--linha-forte); border-radius: 50%;
+  color: var(--azul); background: #fff;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.redes-sociais a:hover { color: #fff; background: var(--verde); border-color: var(--verde); text-decoration: none; }
+.redes-sociais svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.redes-sociais .icone-preenchido { fill: currentColor; stroke: none; }
+.redes-compactas a { width: 30px; height: 30px; }
+.redes-compactas svg { width: 16px; height: 16px; }
 .menu { display: flex; align-items: center; gap: 24px; }
 .menu a { font-size: 15px; color: var(--tinta-3); }
 .menu a:hover { color: var(--azul); text-decoration: none; }
@@ -169,6 +188,15 @@ img { max-width: 100%; height: auto; }
 .cartao-link:hover { border-color: var(--azul-claro); box-shadow: 0 12px 30px rgba(29, 99, 165, .10); transform: translateY(-2px); text-decoration: none; }
 .cartao-link:hover h3 { color: var(--azul); }
 .cartao-seta { font-family: var(--fonte-mono), monospace; font-size: 13px; color: var(--azul); margin-top: auto; padding-top: 8px; }
+.foto-estrutura {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
+  border: 1px solid var(--linha);
+  margin-bottom: 8px;
+}
 
 /* ---------- hero ---------- */
 .hero {
@@ -459,6 +487,11 @@ img { max-width: 100%; height: auto; }
   .hero { padding-block: 44px; }
   .rodape-grade { grid-template-columns: 1fr; }
   .topo-tel { display: none; }
+  .topo-contato .btn { display: none; }
+  .topo-esquerda { gap: 12px; }
+  .marca { gap: 7px; }
+  .marca img { width: 44px; height: 30px; }
+  .marca-nome { font-size: 18px; }
   .acoes .btn { width: 100%; }
   .linha-essencial { flex-direction: column; gap: 2px; }
   .linha-essencial dd { text-align: left; }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { site, whatsappUrl, metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
@@ -32,6 +33,7 @@ export default function ParaVoce() {
               Atendimento clínico para quem busca avaliação médica, prevenção e orientação clara em
               Porto Velho — independentemente de vínculo com uma empresa cliente.
             </p>
+            <p className="chip chip-verde" style={{ alignSelf: 'flex-start' }}>Atendimento particular · sem convênios no momento</p>
             <div className="acoes">
               <a className="btn btn-primario" href={whatsappUrl(mensagem)} target="_blank" rel="noopener noreferrer">
                 Agendar pelo WhatsApp
@@ -43,6 +45,14 @@ export default function ParaVoce() {
           </div>
 
           <div className="cartao" style={{ padding: 32, background: 'var(--fundo-verde)' }}>
+            <Image
+              className="foto-estrutura"
+              src="/recepcao-agilmed.webp"
+              alt="Ambiente de recepção da Agilmed em Porto Velho"
+              width={1024}
+              height={1024}
+              priority
+            />
             <span className="rotulo">Sua médica</span>
             <h2 style={{ fontSize: 28 }}>{site.medicaClinica.nome}</h2>
             <p className="mono" style={{ color: 'var(--azul)', margin: 0 }}>
@@ -75,6 +85,10 @@ export default function ParaVoce() {
               </div>
             ))}
           </div>
+          <div className="acoes" style={{ marginTop: 28 }}>
+            <Link className="btn btn-secundario" href="/exames-clinicos">Pesquisar exames clínicos</Link>
+            <Link className="btn btn-secundario" href="/equipe">Conhecer a equipe médica</Link>
+          </div>
         </div>
       </section>
 
@@ -90,6 +104,7 @@ export default function ParaVoce() {
                 'Dias e horários disponíveis para consulta',
                 'Faixa etária atendida',
                 'Valores e formas de pagamento',
+                'O atendimento é particular; não trabalhamos com convênios no momento',
                 'Documentos ou exames que devem ser levados',
               ].map((texto) => (
                 <div className="item-checado" key={texto}><Check /><p>{texto}</p></div>

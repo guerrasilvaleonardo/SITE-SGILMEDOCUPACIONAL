@@ -56,6 +56,8 @@ export default function Rodape() {
             <a href={site.instagram} target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
+            {' · '}
+            <Link href="/privacidade">Privacidade</Link>
           </div>
         </div>
       </div>
