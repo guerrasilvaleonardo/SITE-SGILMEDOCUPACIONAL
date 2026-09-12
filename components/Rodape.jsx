@@ -13,8 +13,8 @@ export default function Rodape() {
               ÁgilMed<span style={{ color: '#4CAC5E' }}>.</span>
             </div>
             <p style={{ marginTop: 12, lineHeight: 1.6 }}>
-              Medicina do trabalho para empresas e atendimento clínico para a sociedade, em Porto
-              Velho. Exames, PCMSO, riscos psicossociais e consulta clínica.
+              Exames ocupacionais para empresas e atendimento clínico para a sociedade, em Porto
+              Velho. ASO no mesmo dia, complementares e consulta particular.
             </p>
             <p style={{ marginTop: 16, lineHeight: 1.7 }}>
               {site.endereco.rua}
@@ -52,10 +52,7 @@ export default function Rodape() {
             © {ano} {site.nome}. Todos os direitos reservados.
           </div>
           <div>
-            Responsável técnica — Medicina do Trabalho: {site.responsavelTecnico.nome} ·{' '}
-            {site.responsavelTecnico.registro}
-            <br />
-            Médica clínica: {site.medicaClinica.nome} · {site.medicaClinica.registro}
+            Diretora técnica: {site.responsavelTecnico.nome} · {site.responsavelTecnico.registro}
           </div>
           <div>
             <Link href="/privacidade">Privacidade</Link>

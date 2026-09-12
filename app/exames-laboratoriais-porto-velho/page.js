@@ -138,13 +138,10 @@ export default function Laboratoriais() {
               laboratório e voltar depois — o que significa um turno perdido em vez de dois.
             </p>
             <p>
-              O que é pedido depende do risco de cada função, e quem define isso é o PCMSO. Se a sua
-              empresa ainda não tem o programa ou ele está vencido, esse é o ponto de partida.
+              O que é pedido depende do risco de cada função, e quem define isso é o PCMSO da
+              empresa — documento que a clínica não elabora, mas cumpre à risca.
             </p>
             <div className="acoes">
-              <Link className="btn btn-secundario" href="/programas-e-laudos/pcmso">
-                Ver PCMSO
-              </Link>
               <Link className="btn btn-secundario" href="/exames">
                 Exames ocupacionais
               </Link>

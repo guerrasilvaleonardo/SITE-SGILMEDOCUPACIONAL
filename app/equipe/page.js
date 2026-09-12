@@ -19,9 +19,9 @@ const trilha = [
 
 const perguntas = [
   {
-    pergunta: 'Quem assina o ASO e o PCMSO da minha empresa?',
+    pergunta: 'Quem assina o ASO dos meus colaboradores?',
     resposta:
-      'A responsável técnica da clínica, Dra. Francynelle Costa Assis, CRM-RO 2477 · RQE 1920, médica do trabalho. O RQE é o registro de qualificação de especialista junto ao Conselho Federal de Medicina — é ele que comprova a especialidade, e não apenas o CRM.',
+      'O médico examinador que realizou a avaliação, com nome e CRM no documento. A direção técnica da clínica é da Dra. Camila Sousa Ferreira, CRM-RO 9772. O PCMSO, que define quais exames cada função faz, é elaborado pela Real Life Engenharia de SSMA — a clínica executa o que o programa determina.',
   },
   {
     pergunta: 'Preciso de convênio para ser atendido por essa equipe?',
@@ -31,7 +31,7 @@ const perguntas = [
   {
     pergunta: 'A mesma equipe atende empresas e pessoas físicas?',
     resposta:
-      'Sim, e essa é a diferença. Quem faz a avaliação ergonômica do posto de trabalho é a mesma profissional que atende o paciente com dor; quem define o exame ocupacional é a mesma médica que responde pelo programa de saúde da empresa. A informação não se perde entre um serviço e outro.',
+      'Sim. O colaborador que vem fazer o exame ocupacional é atendido pela mesma equipe que atende quem chega por conta própria, no mesmo endereço e com a mesma agenda.',
   },
   {
     pergunta: 'Como faço para escolher um profissional específico?',
@@ -85,7 +85,7 @@ export default function Equipe() {
             <p className="lede">
               Todo mundo que atende aqui tem nome, registro no conselho e uma área definida. Você
               sabe quem vai te receber antes de sair de casa — e a empresa sabe quem assina o
-              documento que vai para o eSocial.
+              documento que a empresa arquiva.
             </p>
             <div className="acoes">
               <a
@@ -109,9 +109,9 @@ export default function Equipe() {
               quem mora em Porto Velho.
             </p>
             <p>
-              Na prática: a fisioterapeuta que avalia o posto de trabalho é a mesma que atende a dor
-              que aquele posto causou. A médica do trabalho que define o exame é a mesma que
-              acompanha o afastamento até o retorno.
+              Na prática: o colaborador que faz o admissional descobre que ali também tem
+              fisioterapia, nutrição e coleta de sangue — perto de casa, com hora marcada. E quem
+              chega como paciente encontra a mesma equipe que a empresa dele já contrata.
             </p>
             <p className="mono" style={{ fontSize: 12.5, letterSpacing: '0.06em', color: 'var(--tinta-4)' }}>
               {site.endereco.bairro.toUpperCase()} · {site.endereco.cidade.toUpperCase()}/
@@ -195,8 +195,8 @@ export default function Equipe() {
             </p>
             <p>
               No caso da medicina, vale reparar no <strong>RQE</strong>. O CRM habilita a exercer a
-              medicina; o RQE é o registro da especialidade. Um ASO ou um PCMSO ganham outro peso
-              quando quem assina tem RQE em Medicina do Trabalho — e é isso que a fiscalização olha.
+              medicina; o RQE é o registro da especialidade. Quando existe, ele aparece ao lado do
+              CRM — e é o que permite a você conferir a qualificação de quem assina.
             </p>
             <p>
               Não prometemos resultado de tratamento em nenhum lugar deste site, porque nenhum

@@ -21,7 +21,7 @@ export default function CtaFinal({
               {rotuloPrimario}
             </a>
             {secundario && (
-              <Link className="btn" style={{ border: '1px solid #79C88A', color: '#fff' }} href={secundario.href}>
+              <Link className="btn" style={{ border: '1px solid #3A4C5E', color: '#fff' }} href={secundario.href}>
                 {secundario.rotulo}
               </Link>
             )}

@@ -2,7 +2,6 @@ export const dynamic = 'force-static';
 
 import { site } from '@/lib/site';
 import { exames, urlExame } from '@/lib/exames';
-import { programas } from '@/lib/programas';
 import { especialidades } from '@/lib/especialidades';
 import { posts } from '@/lib/posts';
 
@@ -12,8 +11,6 @@ export default function sitemap() {
   const fixas = [
     { url: '/', priority: 1 },
     { url: '/exames', priority: 0.9 },
-    { url: '/programas-e-laudos', priority: 0.8 },
-    { url: '/riscos-psicossociais-nr1', priority: 0.9 },
     { url: '/para-empresas', priority: 0.9 },
     { url: '/boletim', priority: 0.8 },
     { url: '/para-voce', priority: 0.9 },
@@ -45,12 +42,6 @@ export default function sitemap() {
       lastModified: agora,
       changeFrequency: 'monthly',
       priority: 0.9,
-    })),
-    ...programas.map((p) => ({
-      url: `${site.url}/programas-e-laudos/${p.slug}`,
-      lastModified: agora,
-      changeFrequency: 'monthly',
-      priority: 0.8,
     })),
     ...posts.map((p) => ({
       url: `${site.url}/blog/${p.slug}`,

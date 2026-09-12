@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { site, metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
@@ -35,13 +34,6 @@ export default function Sobre() {
             </p>
           </div>
           <div className="cartao" style={{ padding: 30, gap: 14 }}>
-            <Image
-              className="foto-estrutura"
-              src="/recepcao-agilmed.webp"
-              alt="Recepção da Agilmed Ocupacional em Porto Velho"
-              width={1024}
-              height={1024}
-            />
             <span className="rotulo">Onde estamos</span>
             <p style={{ fontSize: 16.5, lineHeight: 1.6, color: 'var(--tinta)' }}>
               {site.endereco.rua}
@@ -82,7 +74,7 @@ export default function Sobre() {
             </div>
             <div className="lista-checada">
               {[
-                ['Medicina do trabalho', 'Coordenação do PCMSO e avaliação clínica ocupacional.'],
+                ['Medicina do trabalho', 'Avaliação clínica ocupacional e emissão do ASO.'],
                 ['Psicologia e neuropsicologia', 'Avaliação psicossocial e programas de acompanhamento.'],
                 ['Enfermagem e técnicos', 'Apoio aos exames e ao fluxo de atendimento.'],
                 ['Engenharia de segurança', 'Pela Real Life SSMA, com responsável técnico no CREA-RO.'],

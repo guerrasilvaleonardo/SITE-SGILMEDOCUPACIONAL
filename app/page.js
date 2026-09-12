@@ -3,16 +3,16 @@ import { site, whatsappUrl } from '@/lib/site';
 import Check from '@/components/Check';
 
 export const metadata = {
-  title: 'Saúde ocupacional e atendimento clínico em Porto Velho',
+  title: 'Exames ocupacionais e clínica em Porto Velho',
   description:
-    'Medicina do trabalho para empresas e atendimento clínico para pessoas em Porto Velho. Exames ocupacionais, PCMSO, prevenção e cuidado médico.',
+    'Exames ocupacionais com ASO no mesmo dia e complementares no mesmo endereço, em Porto Velho. E atendimento clínico particular para quem mora na cidade.',
   alternates: { canonical: '/' },
 };
 
 const provas = [
   {
-    titulo: 'Equipe multidisciplinar',
-    texto: 'Medicina do trabalho, engenharia de segurança, psicologia e neuropsicologia.',
+    titulo: 'Equipe com registro',
+    texto: 'Medicina, enfermagem do trabalho, fonoaudiologia, fisioterapia, psicologia e nutrição.',
   },
   {
     titulo: 'Tudo no mesmo endereço',
@@ -23,8 +23,8 @@ const provas = [
     texto: 'Seu colaborador volta à produção sem passar o turno numa fila.',
   },
   {
-    titulo: 'eSocial SST em dia',
-    texto: 'S-2220 e S-2240 preparados e transmitidos por nós, mediante procuração.',
+    titulo: 'Aviso antes do vencimento',
+    texto: 'Todo mês, a lista dos exames da sua equipe que vencem nos próximos 90 dias.',
   },
 ];
 
@@ -41,28 +41,28 @@ const servicos = [
     texto: 'Audiometria, espirometria, ECG, EEG, acuidade visual e laboratoriais, aqui mesmo.',
   },
   {
-    href: '/programas-e-laudos/pcmso',
-    titulo: 'PCMSO e programas',
-    texto: 'Programa médico coordenado por médico do trabalho, com relatório anual e prazos controlados.',
+    href: '/exames-laboratoriais-porto-velho',
+    titulo: 'Exames laboratoriais',
+    texto: 'Coleta na própria clínica, com hora marcada. Sangue, urina e fezes, para empresa e para particular.',
   },
   {
-    href: '/riscos-psicossociais-nr1',
-    titulo: 'Riscos psicossociais',
-    texto: 'Avaliação conduzida por psicólogo e programa contínuo, para atender a exigência da NR-1.',
+    href: '/para-voce',
+    titulo: 'Atendimento à sociedade',
+    texto: 'Consulta clínica, fisioterapia, psicologia e nutrição — particular, com hora marcada.',
   },
 ];
 
 const boletim = [
-  { nome: 'PCMSO — revisão anual', data: '18 out', cor: 'ponto-vermelho' },
+  { nome: 'Audiometrias — produção, 9 pessoas', data: '18 out', cor: 'ponto-vermelho' },
   { nome: 'Periódicos — produção, 14 pessoas', data: '24 out', cor: 'ponto-vermelho' },
-  { nome: 'NR-35 — reciclagem, 6 pessoas', data: '21 nov', cor: 'ponto-ambar' },
-  { nome: 'PGR — inventário de riscos', data: '04 dez', cor: 'ponto-ambar' },
+  { nome: 'Complementares — frota, 6 motoristas', data: '21 nov', cor: 'ponto-ambar' },
+  { nome: 'Periódicos — administrativo, 11 pessoas', data: '04 dez', cor: 'ponto-ambar' },
 ];
 
 const etapas = [
   { n: '01', titulo: 'Levantamento', texto: 'Mapeamos setores, riscos e o que já está vencido hoje.' },
   { n: '02', titulo: 'Agenda', texto: 'Horário reservado por lote, sem o seu time esperando na recepção.' },
-  { n: '03', titulo: 'Exames e documentos', texto: 'Clínicos, complementares e ASO assinado por quem responde por ele.' },
+  { n: '03', titulo: 'Exames e documentos', texto: 'Avaliação clínica, complementares e ASO assinado pelo médico examinador.' },
   { n: '04', titulo: 'Boletim mensal', texto: 'A partir daí você é avisado antes de cada vencimento. Todo mês.' },
 ];
 
@@ -72,19 +72,19 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grade">
           <div className="hero-texto">
-            <span className="rotulo">Empresas e pessoas · Porto Velho</span>
-            <h1>Cuidado para sua empresa. Saúde para você.</h1>
+            <span className="rotulo">Medicina do trabalho · Porto Velho</span>
+            <h1>Antes que vire problema.</h1>
             <p className="lede">
-              Saúde ocupacional para empresas e atendimento clínico para a sociedade, com orientação
-              clara, equipe qualificada e facilidade para agendar.
+              Exame, programa, laudo e avaliação psicossocial na mesma casa — e um aviso todo mês com o
+              que vence nos próximos 90 dias. Você não precisa lembrar de nada.
             </p>
             <div className="acoes">
-              <Link className="btn btn-primario" href="/para-voce">
-                Quero atendimento clínico
+              <Link className="btn btn-primario" href="/boletim">
+                Receba o Boletim do seu CNPJ
               </Link>
-              <Link className="btn btn-secundario" href="/para-empresas">
-                Soluções para empresas
-              </Link>
+              <span style={{ fontSize: 15, color: 'var(--tinta-3)' }}>
+                Grátis, uma página, todo dia 5.
+              </span>
             </div>
           </div>
 
@@ -133,14 +133,14 @@ export default function Home() {
             <h2>A clínica comum entrega o exame. Nós entregamos a antecedência.</h2>
             <div className="texto">
               <p>
-                Empresas clientes da ÁgilMed recebem, todo dia 5, uma página com o que vence nos
-                próximos 90 dias: programas, periódicos por setor, treinamentos de NR, toxicológicos
-                e ASOs. Nada de procurar no arquivo ou descobrir o prazo na fiscalização.
+                Todo dia 5 você recebe uma página com o que vence nos próximos 90 dias: programas,
+                periódicos por setor, treinamentos de NR, toxicológicos e ASOs. Nada de procurar no
+                arquivo, nada de descobrir na fiscalização.
               </p>
             </div>
             <div className="acoes">
               <Link className="btn btn-primario" href="/boletim">
-                Ver benefício exclusivo
+                Receba o Boletim do seu CNPJ
               </Link>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function Home() {
       <section className="secao secao-fundo">
         <div className="wrap">
           <div className="secao-cabeca">
-            <h2>Soluções para empresas</h2>
+            <h2>O que a sua empresa precisa</h2>
           </div>
           <div className="grade g4">
             {servicos.map((s) => (
@@ -179,54 +179,34 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="secao">
-        <div className="wrap hero-grade">
-          <div className="hero-texto">
-            <span className="rotulo">Para você e sua família</span>
-            <h2>Atendimento clínico próximo, claro e acessível.</h2>
-            <div className="texto">
-              <p>
-                A Agilmed também atende pessoas que procuram avaliação médica, orientação preventiva
-                e acompanhamento clínico em Porto Velho — mesmo sem vínculo com uma empresa cliente.
-              </p>
-            </div>
-            <div className="acoes">
-              <Link className="btn btn-primario" href="/para-voce">
-                Conhecer o atendimento
-              </Link>
-            </div>
-          </div>
-          <div className="cartao" style={{ padding: 30, background: 'var(--fundo-verde)' }}>
-            <span className="rotulo">Atendimento clínico</span>
-            <h3 style={{ fontSize: 24 }}>Dra. Camila Sousa Ferreira</h3>
-            <p>CRM-RO 9772 · Medicina Clínica</p>
-            <p>
-              Consulta com escuta cuidadosa, avaliação individual e orientação para os próximos passos
-              do cuidado.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="secao secao-escura">
         <div className="wrap hero-grade">
           <div className="hero-texto">
-            <span className="rotulo" style={{ color: '#4CAC5E' }}>
-              NR-1 · fiscalização desde 26 de maio de 2026
+            <span className="rotulo" style={{ color: '#E5915A' }}>
+              Duas empresas, uma casa
             </span>
-            <h2>Seu PGR já tem o inventário psicossocial?</h2>
+            <h2>A clínica faz o exame. A engenharia faz o programa.</h2>
             <p style={{ fontSize: 17, maxWidth: '34em' }}>
-              Desde maio o auditor-fiscal pode autuar a empresa que não gerencia os fatores de risco
-              psicossocial. Aqui a avaliação é conduzida por psicólogo, o inventário é assinado por
-              responsável técnico e o programa sai em um relatório só.
+              A ÁgilMed realiza os exames ocupacionais e emite o ASO. Os programas e documentos que
+              definem <em>quais</em> exames cada função faz — PGR, PCMSO, laudos, eSocial SST e
+              treinamentos — são da Real Life Engenharia de SSMA, do mesmo grupo.
+            </p>
+            <p style={{ fontSize: 17, maxWidth: '34em' }}>
+              São responsabilidades técnicas diferentes, e é assim que tem que ser. Para você muda
+              uma coisa só: não precisa procurar em dois lugares.
             </p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14, alignItems: 'flex-start' }}>
-            <Link className="btn btn-claro" href="/riscos-psicossociais-nr1">
-              Ver como funciona a adequação
-            </Link>
-            <span style={{ fontSize: 14, color: '#A9C8D8' }}>
-              Diagnóstico inicial sem custo para empresas de Porto Velho.
+            <a
+              className="btn btn-claro"
+              href="https://www.reallifessma.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Conhecer a Real Life
+            </a>
+            <span style={{ fontSize: 14, color: '#8496A6' }}>
+              Precisa de PGR, PCMSO ou treinamento de NR? É com eles.
             </span>
           </div>
         </div>
@@ -310,11 +290,11 @@ export default function Home() {
           <div className="cta-bloco">
             <div>
               <h2>Comece sabendo o que já está vencendo.</h2>
-              <p>Já é cliente? Informe o CNPJ para validarmos o cadastro e ativarmos o boletim.</p>
+              <p>Mande o CNPJ e devolvemos o primeiro Boletim de Antecedência da sua empresa.</p>
             </div>
             <div className="acoes">
               <Link className="btn btn-claro" href="/boletim">
-                Solicitar ativação
+                Receba o Boletim do seu CNPJ
               </Link>
             </div>
           </div>

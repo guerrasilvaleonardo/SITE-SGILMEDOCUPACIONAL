@@ -8,7 +8,7 @@ import Check from '@/components/Check';
 export const metadata = metadadosPagina({
   titulo: 'Gestão de SST para empresas em Porto Velho',
   descricao:
-    'PCMSO, exames, riscos psicossociais, eSocial e controle de vencimentos em um só fornecedor, para empresas de Porto Velho e região.',
+    'Exames ocupacionais para empresas de Porto Velho: admissional, periódico, demissional e complementares no mesmo endereço, com ASO no mesmo dia.',
   caminho: '/para-empresas',
 });
 
@@ -27,14 +27,14 @@ export default function ParaEmpresas() {
         <div className="wrap">
           <div className="secao-cabeca">
             <span className="rotulo">Para empresas</span>
-            <h1>Sua empresa em dia, sem você precisar lembrar</h1>
+            <h1>Os exames da sua equipe, sem o turno perdido</h1>
             <p className="lede">
-              Exames, programa médico, riscos psicossociais e eventos de eSocial no mesmo fornecedor —
-              com um aviso mensal do que vence nos próximos 90 dias.
+              Avaliação clínica e complementares no mesmo endereço, ASO no mesmo dia e um aviso
+              mensal com os exames que vencem nos próximos 90 dias.
             </p>
           </div>
           <div className="acoes">
-            <a className="btn btn-primario" href={whatsappUrl('Olá! Quero uma proposta de gestão de SST para a minha empresa.')} target="_blank" rel="noopener noreferrer">
+            <a className="btn btn-primario" href={whatsappUrl('Olá! Quero uma proposta de exames ocupacionais para a minha empresa.')} target="_blank" rel="noopener noreferrer">
               Falar no WhatsApp
             </a>
             <Link className="btn btn-secundario" href="#proposta">
@@ -52,11 +52,11 @@ export default function ParaEmpresas() {
           <div className="grade g3">
             {[
               ['Exames ocupacionais', 'Admissional, periódico, demissional, retorno e mudança de risco, com complementares no mesmo endereço.'],
-              ['PCMSO', 'Programa médico coordenado por médico do trabalho, com relação de exames por função e relatório anual.'],
-              ['Riscos psicossociais', 'Avaliação por psicólogo e programa contínuo, como a NR-1 passou a exigir das empresas.'],
-              ['eSocial SST', 'S-2220 e S-2240 preparados e transmitidos no prazo, mediante procuração.'],
-              ['Gestão de afastados', 'Retorno ao trabalho, restrições, readaptação e acompanhamento dos casos abertos.'],
-              ['Boletim mensal', 'Benefício para CNPJs clientes: uma página, todo dia 5, com o que vence nos próximos 90 dias.'],
+              ['Exames complementares', 'Audiometria, espirometria, ECG, EEG, acuidade visual e laboratoriais, sem encaminhamento.'],
+              ['ASO no mesmo dia', 'Emitido em duas vias e assinado pelo médico examinador, com nome e CRM.'],
+              ['Agendamento em lote', 'Horário reservado para contratação em volume, sem a sua equipe esperando na recepção.'],
+              ['Retorno ao trabalho', 'A avaliação obrigatória depois de afastamento, conduzida com a atenção que o caso exige.'],
+              ['Boletim mensal', 'Uma página, todo dia 5, com os exames que vencem nos próximos 90 dias.'],
             ].map(([t, d]) => (
               <div className="cartao" key={t}>
                 <h3>{t}</h3>
@@ -71,12 +71,12 @@ export default function ParaEmpresas() {
         <div className="wrap hero-grade">
           <div>
             <div className="secao-cabeca">
-              <h2>Por que um fornecedor só</h2>
+              <h2>Por que aqui</h2>
             </div>
             <div className="lista-checada">
               {[
-                ['O risco vira exame sem intermediário', 'O que a engenharia identifica no PGR entra direto no PCMSO, e o que o exame encontra volta para a revisão do programa.'],
-                ['Um calendário, não três', 'Programas, exames e treinamentos vencem em datas diferentes. Quando estão no mesmo controle, ninguém descobre atraso na fiscalização.'],
+                ['Uma visita, não três', 'Avaliação clínica, complementares e coleta acontecem no mesmo endereço. O colaborador não vai a um laboratório do outro lado da cidade.'],
+                ['Um calendário que avisa antes', 'Exame vencido não manda alerta. O Boletim mensal mostra o que vence nos próximos 90 dias, colaborador por colaborador.'],
                 ['Uma conversa quando dá problema', 'Afastamento longo, restrição, resultado alterado: você fala com quem tem o histórico inteiro do colaborador.'],
                 ['Menos hora parada', 'Avaliação clínica e complementares no mesmo endereço, com agendamento em lote para contratações em volume.'],
               ].map(([t, d]) => (
@@ -90,14 +90,17 @@ export default function ParaEmpresas() {
             </div>
           </div>
           <div className="destaque destaque-ambar">
-            <span className="rotulo" style={{ color: 'var(--ambar)' }}>Atenção ao prazo</span>
+            <span className="rotulo" style={{ color: 'var(--ambar)' }}>O que não é conosco</span>
             <p style={{ fontSize: 16.5, lineHeight: 1.6 }}>
-              Desde 26 de maio de 2026 o auditor-fiscal pode autuar a empresa cujo PGR não trate dos
-              fatores de risco psicossocial. Se o seu programa ainda não foi revisado, esse é o item
-              mais urgente da lista.
+              A ÁgilMed <strong>realiza os exames</strong>. Quem elabora o PGR, o PCMSO, os laudos,
+              os eventos de eSocial SST e os treinamentos de NR é a <strong>Real Life Engenharia de
+              SSMA</strong>, do mesmo grupo — e é o PCMSO dela que define quais exames cada função
+              da sua empresa precisa fazer.
             </p>
             <p style={{ marginTop: 12 }}>
-              <Link href="/riscos-psicossociais-nr1">Ver como adequar →</Link>
+              <a href="https://www.reallifessma.com.br" target="_blank" rel="noopener noreferrer">
+                Conhecer a Real Life →
+              </a>
             </p>
           </div>
         </div>
