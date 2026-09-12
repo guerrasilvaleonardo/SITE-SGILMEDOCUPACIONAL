@@ -74,14 +74,18 @@ export default function Privacidade() {
         <div className="wrap artigo-corpo" style={{ paddingBottom: 24 }}>
           <h2>1. Quem trata seus dados</h2>
           <p>
-            O controlador dos dados é a <strong>ÁgilMed Ocupacional</strong>, inscrita no CNPJ
-            [00.000.000/0001-00], com endereço na {site.endereco.rua}, {site.endereco.bairro},{' '}
-            {site.endereco.cidade}/{site.endereco.uf}, CEP {site.endereco.cep}.
+            O controlador dos dados é a{' '}
+            <strong>AGIL MED OCUPACIONAL SERVIÇOS EM SAÚDE LTDA.</strong>, que atua sob o nome
+            ÁgilMed Ocupacional, inscrita no CNPJ 61.603.223/0001-38, com endereço na{' '}
+            {site.endereco.rua}, {site.endereco.bairro}, {site.endereco.cidade}/{site.endereco.uf},
+            CEP {site.endereco.cep}.
           </p>
           <p>
-            Para assuntos de proteção de dados, o contato é{' '}
-            <a href={`mailto:${site.email}`}>{site.email}</a>. O encarregado pelo tratamento de dados
-            pessoais é [NOME DO ENCARREGADO], que pode ser acionado pelo mesmo endereço.
+            Para assuntos de proteção de dados, a ÁgilMed mantém canal de comunicação aberto no
+            e-mail <a href={`mailto:${site.email}`}>{site.email}</a>. Pedidos, dúvidas e reclamações
+            sobre o tratamento de dados pessoais devem ser enviados por ali, com o assunto{' '}
+            <em>Proteção de dados</em>, e são encaminhados a quem responde pelo tema dentro da
+            clínica.
           </p>
 
           <h2>2. Quais dados coletamos neste site</h2>
@@ -275,11 +279,11 @@ export default function Privacidade() {
             </div>
             <div className="cartao" style={{ padding: 28 }}>
               <span className="rotulo">Dúvidas sobre privacidade</span>
-              <h3 style={{ fontSize: 21 }}>Fale com o encarregado</h3>
+              <h3 style={{ fontSize: 21 }}>Canal de proteção de dados</h3>
               <p>
                 Dúvidas sobre como tratamos seus dados podem ser enviadas para{' '}
-                <a href={`mailto:${site.email}`}>{site.email}</a>, aos cuidados do encarregado pelo
-                tratamento de dados pessoais.
+                <a href={`mailto:${site.email}`}>{site.email}</a>. Esse é o canal oficial da clínica
+                para assuntos de proteção de dados.
               </p>
             </div>
           </div>

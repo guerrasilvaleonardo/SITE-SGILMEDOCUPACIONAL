@@ -3,6 +3,7 @@ export const dynamic = 'force-static';
 import { site } from '@/lib/site';
 import { exames, urlExame } from '@/lib/exames';
 import { programas } from '@/lib/programas';
+import { especialidades } from '@/lib/especialidades';
 import { posts } from '@/lib/posts';
 
 export default function sitemap() {
@@ -31,6 +32,12 @@ export default function sitemap() {
       lastModified: agora,
       changeFrequency: 'monthly',
       priority: p.priority,
+    })),
+    ...especialidades.map((e) => ({
+      url: `${site.url}/para-voce/${e.slug}`,
+      lastModified: agora,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     })),
     ...exames.map((e) => ({
       url: `${site.url}${urlExame(e.slug)}`,
