@@ -1,535 +1,523 @@
 import Link from 'next/link';
 import { especialidades } from '@/lib/especialidades';
 import {
-site,
-whatsappUrl,
-metadadosPagina,
-jsonLdBreadcrumb,
+  site,
+  whatsappUrl,
+  metadadosPagina,
+  jsonLdBreadcrumb,
 } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata = metadadosPagina({
-titulo: 'Atendimento clínico em Porto Velho',
-descricao:
-'Atendimento particular em Porto Velho com consulta clínica, fisioterapia, psicologia, nutrição e exames. Hora marcada, atendimento humanizado e sem fila.',
-caminho: '/para-voce',
+  titulo: 'Atendimento clínico em Porto Velho',
+  descricao:
+    'Atendimento particular em Porto Velho com consulta clínica, fisioterapia, psicologia, nutrição e exames. Hora marcada, atendimento humanizado e sem fila.',
+  caminho: '/para-voce',
 });
 
 const trilha = [
-{ href: '/', rotulo: 'Início' },
-{ href: '/para-voce', rotulo: 'Para você' },
+  { href: '/', rotulo: 'Início' },
+  { href: '/para-voce', rotulo: 'Para você' },
 ];
 
-export default function ParaVoce() {
-return (
-<> <JsonLd dados={jsonLdBreadcrumb(trilha)} /> <Trilha itens={trilha} />
+export default function ParaVocePage() {
+  return (
+    <>
+      <JsonLd data={jsonLdBreadcrumb(trilha)} />
 
-```
-  {/* HERO */}
-  <section style={{ paddingBlock: '26px 52px' }}>
-    <div className="wrap hero-grade">
-      <div className="hero-texto">
-        <span className="rotulo">Atendimento para a sociedade</span>
+      <main>
+        {/* HERO */}
+        <section className="hero">
+          <div className="container hero-grid">
+            <div className="hero-conteudo">
+              <Trilha itens={trilha} />
 
-        <h1>
-          Cuidado para você,
-          <br />
-          no momento em que precisa.
-        </h1>
+              <span className="selo">
+                Atendimento particular em Porto Velho
+              </span>
 
-        <p className="lede">
-          Consulta clínica, fisioterapia, psicologia, nutrição e exames
-          clínicos em Porto Velho — com hora marcada, atendimento
-          particular e sem fila.
-        </p>
+              <h1>
+                Cuidar da sua saúde pode ser mais simples.
+              </h1>
 
-        <p
-          className="mono"
-          style={{
-            fontSize: 12.5,
-            letterSpacing: '0.06em',
-            color: 'var(--tinta-4)',
-          }}
-        >
-          ATENDIMENTO PARTICULAR · SEM CONVÊNIOS NO MOMENTO
-        </p>
+              <p className="hero-texto">
+                Na ÁgilMed, você encontra atendimento particular com hora
+                marcada, profissionais qualificados e uma experiência
+                pensada para cuidar de você de forma humana, rápida e
+                acolhedora.
+              </p>
 
-        <div className="acoes">
-          <a
-            className="btn btn-primario"
-            href={whatsappUrl(
-              'Olá! Gostaria de agendar um atendimento na ÁgilMed.'
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Agendar pelo WhatsApp
-          </a>
+              <div className="hero-acoes">
+                <a
+                  className="botao botao-principal"
+                  href={whatsappUrl(
+                    'Olá! Gostaria de agendar um atendimento na ÁgilMed.'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Agendar atendimento
+                </a>
 
-          <a className="btn btn-secundario" href="#atendimentos">
-            Ver atendimentos
-          </a>
-        </div>
-      </div>
+                <a
+                  className="botao botao-secundario"
+                  href="#atendimentos"
+                >
+                  Conhecer especialidades
+                </a>
+              </div>
 
-      <div className="cartao" style={{ padding: 30, gap: 14 }}>
-        <span className="rotulo">ÁgilMed</span>
+              <div className="hero-confianca">
+                <span>✓ Hora marcada</span>
+                <span>✓ Atendimento humanizado</span>
+                <span>✓ Sem fila</span>
+              </div>
+            </div>
 
-        <h3 style={{ fontSize: 22 }}>
-          Consulta, cuidado e exame no mesmo endereço.
-        </h3>
+            <div className="hero-card">
+              <span className="hero-card-label">
+                ÁgilMed Ocupacional
+              </span>
 
-        <p>
-          Você não precisa transformar uma necessidade simples de saúde em
-          uma maratona de endereços, filas e deslocamentos.
-        </p>
+              <strong>
+                Saúde, cuidado e prevenção em um só lugar.
+              </strong>
 
-        <p>
-          Na ÁgilMed, diferentes atendimentos e exames estão reunidos em um
-          único lugar, com agendamento e orientação antes da sua chegada.
-        </p>
+              <p>
+                Atendimento particular para você cuidar da sua saúde
+                com mais praticidade e tranquilidade.
+              </p>
 
-        <p>
-          {site.endereco.rua}
-          <br />
-          {site.endereco.bairro} · {site.endereco.cidade}/
-          {site.endereco.uf}
-        </p>
-      </div>
-    </div>
-  </section>
-
-  {/* ATENDIMENTOS */}
-  <section className="secao secao-fundo" id="atendimentos">
-    <div className="wrap">
-      <div className="secao-cabeca">
-        <h2>Encontre o atendimento que você precisa</h2>
-
-        <p>
-          Atendimento particular para diferentes necessidades de saúde,
-          sempre com hora marcada.
-        </p>
-      </div>
-
-      <div className="grade g3">
-        {especialidades.map((item) => (
-          <Link
-            className="cartao cartao-link"
-            href={`/para-voce/${item.slug}`}
-            key={item.slug}
-          >
-            <span className="rotulo">Atendimento particular</span>
-
-            <h3>{item.nome}</h3>
-
-            <p>{item.chamada}</p>
-
-            <span className="cartao-seta">
-              Ver detalhes →
-            </span>
-          </Link>
-        ))}
-
-        <Link
-          className="cartao cartao-link"
-          href="/para-voce/consulta-clinica"
-        >
-          <span className="rotulo">Medicina</span>
-
-          <h3>Consulta clínica</h3>
-
-          <p>
-            Avaliação médica, orientação preventiva e acompanhamento
-            clínico, com atendimento particular e hora marcada.
-          </p>
-
-          <span className="cartao-seta">
-            Ver detalhes →
-          </span>
-        </Link>
-      </div>
-    </div>
-  </section>
-
-  {/* EXAMES */}
-  <section className="secao">
-    <div className="wrap">
-      <div className="secao-cabeca">
-        <h2>Exames no mesmo endereço</h2>
-
-        <p>
-          Além dos atendimentos clínicos, a ÁgilMed realiza exames e
-          procedimentos para facilitar sua jornada de cuidado.
-        </p>
-      </div>
-
-      <div className="grade g2">
-        <Link
-          className="cartao cartao-link"
-          href="/exames-clinicos"
-        >
-          <span className="rotulo">Exames clínicos</span>
-
-          <h3>ECG, EEG, audiometria e procedimentos</h3>
-
-          <p>
-            Eletrocardiograma, eletroencefalograma, audiometria, coleta
-            laboratorial e procedimentos de enfermagem, com agendamento.
-          </p>
-
-          <span className="cartao-seta">
-            Conhecer os exames →
-          </span>
-        </Link>
-
-        <Link
-          className="cartao cartao-link"
-          href="/exames-laboratoriais-porto-velho"
-        >
-          <span className="rotulo">Laboratório</span>
-
-          <h3>Exames laboratoriais</h3>
-
-          <p>
-            Coleta de sangue e urina no próprio endereço, com orientação
-            sobre preparo e jejum no momento do agendamento.
-          </p>
-
-          <span className="cartao-seta">
-            Ver exames laboratoriais →
-          </span>
-        </Link>
-      </div>
-    </div>
-  </section>
-
-  {/* DIFERENCIAL */}
-  <section className="secao secao-fundo">
-    <div className="wrap hero-grade">
-      <div className="texto">
-        <div className="secao-cabeca">
-          <h2>Saúde não deveria ser complicada.</h2>
-        </div>
-
-        <p>
-          Muitas vezes, cuidar da saúde significa conciliar consulta,
-          exame, trabalho, deslocamento e horários diferentes.
-        </p>
-
-        <p>
-          A proposta da ÁgilMed é tornar esse caminho mais simples:
-          atendimento organizado, profissionais identificados, orientação
-          clara e agendamento antes de você sair de casa.
-        </p>
-
-        <p>
-          Quando houver necessidade de exame, você também pode realizar
-          diferentes procedimentos no mesmo endereço.
-        </p>
-      </div>
-
-      <div>
-        <div className="secao-cabeca">
-          <h2>Uma experiência mais organizada</h2>
-        </div>
-
-        <div className="lista-checada">
-          <div className="item-checado">
-            <span className="mono">01</span>
-            <p>
-              <strong>Hora marcada</strong> — você sabe quando será
-              atendido.
-            </p>
+              <div className="hero-card-info">
+                <span>📍 Porto Velho – RO</span>
+                <span>🕐 Atendimento com hora marcada</span>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div className="item-checado">
-            <span className="mono">02</span>
-            <p>
-              <strong>Orientação antes da ida</strong> — preparo, documentos
-              e informações são confirmados no agendamento.
-            </p>
-          </div>
-
-          <div className="item-checado">
-            <span className="mono">03</span>
-            <p>
-              <strong>Vários serviços no mesmo endereço</strong> — menos
-              deslocamentos para resolver o que precisa.
-            </p>
-          </div>
-
-          <div className="item-checado">
-            <span className="mono">04</span>
-            <p>
-              <strong>Atendimento particular</strong> — valores e formas
-              de pagamento informados antes do agendamento.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {/* COMO FUNCIONA */}
-  <section className="secao">
-    <div className="wrap">
-      <div className="secao-cabeca">
-        <h2>Como funciona</h2>
-      </div>
-
-      <div className="grade g3">
-        {[
-          {
-            n: '01',
-            titulo: 'Escolha o atendimento',
-            texto:
-              'Veja a especialidade ou exame que você precisa e confira os detalhes.',
-          },
-          {
-            n: '02',
-            titulo: 'Agende pelo WhatsApp',
-            texto:
-              'Informe o que precisa. A equipe confirma disponibilidade, valores e orientações.',
-          },
-          {
-            n: '03',
-            titulo: 'Venha no horário combinado',
-            texto:
-              'Chegue no endereço informado, com os documentos e preparos necessários para o seu atendimento.',
-          },
-        ].map((e, i) => (
-          <div
-            key={e.n}
-            style={{
-              borderTop: `2px solid ${
-                i === 0
-                  ? 'var(--azul-claro)'
-                  : 'var(--linha)'
-              }`,
-              paddingTop: 14,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 8,
-            }}
-          >
-            <span
-              className="mono"
-              style={{
-                fontSize: 12,
-                fontWeight: 600,
-                color:
-                  i === 0
-                    ? 'var(--azul-claro)'
-                    : 'var(--tinta-4)',
-              }}
-            >
-              {e.n}
-            </span>
-
-            <h3>{e.titulo}</h3>
-
-            <p
-              style={{
-                fontSize: 15,
-                color: 'var(--tinta-3)',
-              }}
-            >
-              {e.texto}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* PARA QUEM JÁ TEM PEDIDO */}
-  <section className="secao secao-fundo">
-    <div className="wrap">
-      <div className="secao-cabeca">
-        <h2>Já sabe o que precisa?</h2>
-
-        <p>
-          Se você já tem pedido médico ou sabe qual exame precisa realizar,
-          pode falar diretamente com nossa equipe.
-        </p>
-      </div>
-
-      <div className="grade g2">
-        <div className="cartao">
-          <span className="rotulo">Tenho um pedido</span>
-
-          <h3>Quero agendar um exame</h3>
-
-          <p>
-            Envie pelo WhatsApp o nome do exame ou uma foto do pedido.
-            Nossa equipe orienta sobre preparo, valor e horário.
-          </p>
-
-          <div className="acoes">
-            <a
-              className="btn btn-primario"
-              href={whatsappUrl(
-                'Olá! Tenho um pedido de exame e gostaria de verificar o agendamento.'
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enviar pelo WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <div className="cartao">
-          <span className="rotulo">Ainda não sei</span>
-
-          <h3>Preciso conversar com um profissional</h3>
-
-          <p>
-            Se você não sabe qual atendimento procurar, entre em contato
-            com a equipe para receber orientação sobre o serviço adequado.
-          </p>
-
-          <div className="acoes">
-            <a
-              className="btn btn-secundario"
-              href={whatsappUrl(
-                'Olá! Não sei qual atendimento preciso. Gostaria de orientação.'
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Falar com a equipe
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  {/* LINKS */}
-  <section className="secao">
-    <div className="wrap">
-      <div className="secao-cabeca">
-        <h2>Veja também</h2>
-      </div>
-
-      <div className="grade g3">
-        <Link
-          className="cartao cartao-link"
-          href="/exames-clinicos"
+        {/* ATENDIMENTOS */}
+        <section
+          className="secao"
+          id="atendimentos"
         >
-          <h3>Exames clínicos</h3>
+          <div className="container">
+            <div className="cabecalho-secao">
+              <span className="rotulo-secao">
+                Atendimento particular
+              </span>
 
-          <p>
-            ECG, EEG, audiometria, coleta laboratorial e procedimentos de
-            enfermagem.
-          </p>
+              <h2>
+                Encontre o cuidado que você precisa
+              </h2>
 
-          <span className="cartao-seta">
-            Ver detalhes →
-          </span>
-        </Link>
+              <p>
+                Escolha uma especialidade e conheça os serviços
+                disponíveis na ÁgilMed.
+              </p>
+            </div>
 
-        <Link
-          className="cartao cartao-link"
-          href="/equipe"
-        >
-          <h3>Nossa equipe</h3>
+            <div className="grade g3">
+              {especialidades.map((item) => (
+                <Link
+                  className="cartao cartao-link"
+                  href={`/para-voce/${item.slug}`}
+                  key={item.slug}
+                >
+                  <span className="rotulo">
+                    Atendimento particular
+                  </span>
 
-          <p>
-            Conheça os profissionais, registros e áreas de atuação.
-          </p>
+                  <h3>{item.nome}</h3>
 
-          <span className="cartao-seta">
-            Conhecer equipe →
-          </span>
-        </Link>
+                  <p>{item.chamada}</p>
 
-        <Link
-          className="cartao cartao-link"
-          href="/exames"
-        >
-          <h3>Exames ocupacionais</h3>
+                  <span className="cartao-seta">
+                    Ver detalhes →
+                  </span>
+                </Link>
+              ))}
 
-          <p>
-            Admissional, periódico, demissional e retorno ao trabalho para
-            empresas.
-          </p>
+              <Link
+                className="cartao cartao-link"
+                href="/para-voce/consulta-clinica"
+              >
+                <span className="rotulo">
+                  Medicina
+                </span>
 
-          <span className="cartao-seta">
-            Para empresas →
-          </span>
-        </Link>
-      </div>
-    </div>
-  </section>
+                <h3>Consulta clínica</h3>
 
-  {/* CTA FINAL */}
-  <section className="secao secao-fundo">
-    <div className="wrap">
-      <div className="cta-bloco">
-        <div>
-          <h2>Precisa de atendimento?</h2>
+                <p>
+                  Avaliação médica, orientação preventiva e
+                  acompanhamento clínico, com atendimento particular
+                  e hora marcada.
+                </p>
 
-          <p>
-            Fale com a ÁgilMed e encontre o melhor horário para você.
-          </p>
+                <span className="cartao-seta">
+                  Ver detalhes →
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
 
-          <p>
-            {site.endereco.rua} · {site.endereco.bairro} ·{' '}
-            {site.endereco.cidade}/{site.endereco.uf}
-          </p>
-        </div>
+        {/* EXAMES */}
+        <section className="secao secao-clara">
+          <div className="container">
+            <div className="duas-colunas">
+              <div>
+                <span className="rotulo-secao">
+                  Exames ocupacionais
+                </span>
 
-        <div className="acoes">
-          <a
-            className="btn btn-claro"
-            href={whatsappUrl(
-              'Olá! Gostaria de agendar um atendimento na ÁgilMed.'
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Agendar pelo WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-</>
-```
+                <h2>
+                  Também cuidamos da sua saúde ocupacional
+                </h2>
 
-);
+                <p>
+                  Para empresas, trabalhadores e profissionais que
+                  precisam realizar exames ocupacionais, a ÁgilMed
+                  oferece atendimento organizado e acompanhamento
+                  especializado.
+                </p>
+
+                <div className="lista-check">
+                  <div>✓ Exames admissionais</div>
+                  <div>✓ Exames periódicos</div>
+                  <div>✓ Exames demissionais</div>
+                  <div>✓ Exames de retorno ao trabalho</div>
+                  <div>✓ Exames de mudança de função</div>
+                </div>
+
+                <a
+                  className="botao botao-principal"
+                  href={whatsappUrl(
+                    'Olá! Gostaria de informações sobre exames ocupacionais na ÁgilMed.'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Falar sobre exames
+                </a>
+              </div>
+
+              <div className="painel-destaque">
+                <span className="painel-icone">+</span>
+
+                <h3>
+                  Saúde ocupacional com agilidade
+                </h3>
+
+                <p>
+                  Atendimento organizado para facilitar a rotina
+                  de trabalhadores e empresas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* DIFERENCIAL */}
+        <section className="secao">
+          <div className="container">
+            <div className="cabecalho-secao">
+              <span className="rotulo-secao">
+                Por que escolher a ÁgilMed?
+              </span>
+
+              <h2>
+                Uma experiência diferente de cuidar da saúde
+              </h2>
+
+              <p>
+                Nosso atendimento foi pensado para oferecer
+                praticidade sem abrir mão do cuidado humano.
+              </p>
+            </div>
+
+            <div className="grade g4">
+              <article className="mini-card">
+                <span>01</span>
+                <h3>Hora marcada</h3>
+                <p>
+                  Mais organização para você não perder tempo.
+                </p>
+              </article>
+
+              <article className="mini-card">
+                <span>02</span>
+                <h3>Atendimento humanizado</h3>
+                <p>
+                  Você é tratado como pessoa, não apenas como
+                  paciente.
+                </p>
+              </article>
+
+              <article className="mini-card">
+                <span>03</span>
+                <h3>Profissionais qualificados</h3>
+                <p>
+                  Atendimento realizado por profissionais
+                  preparados.
+                </p>
+              </article>
+
+              <article className="mini-card">
+                <span>04</span>
+                <h3>Praticidade</h3>
+                <p>
+                  Agendamento simples e comunicação rápida.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* COMO FUNCIONA */}
+        <section className="secao secao-clara">
+          <div className="container">
+            <div className="cabecalho-secao">
+              <span className="rotulo-secao">
+                Como funciona
+              </span>
+
+              <h2>
+                Agendar seu atendimento é simples
+              </h2>
+            </div>
+
+            <div className="passos">
+              <div className="passo">
+                <span>1</span>
+
+                <div>
+                  <h3>Escolha o atendimento</h3>
+                  <p>
+                    Encontre a especialidade ou serviço que você
+                    precisa.
+                  </p>
+                </div>
+              </div>
+
+              <div className="passo">
+                <span>2</span>
+
+                <div>
+                  <h3>Entre em contato</h3>
+                  <p>
+                    Fale conosco pelo WhatsApp e informe o
+                    atendimento desejado.
+                  </p>
+                </div>
+              </div>
+
+              <div className="passo">
+                <span>3</span>
+
+                <div>
+                  <h3>Escolha o melhor horário</h3>
+                  <p>
+                    Nossa equipe verifica a disponibilidade e
+                    orienta você.
+                  </p>
+                </div>
+              </div>
+
+              <div className="passo">
+                <span>4</span>
+
+                <div>
+                  <h3>Compareça à ÁgilMed</h3>
+                  <p>
+                    Chegue no horário combinado e tenha uma
+                    experiência tranquila.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PARA QUEM JÁ TEM PEDIDO */}
+        <section className="secao">
+          <div className="container">
+            <div className="duas-colunas">
+              <div>
+                <span className="rotulo-secao">
+                  Já possui um pedido?
+                </span>
+
+                <h2>
+                  Precisa realizar um exame ou atendimento
+                  específico?
+                </h2>
+
+                <p>
+                  Se você já possui uma solicitação médica ou
+                  orientação profissional, entre em contato com
+                  nossa equipe. Vamos orientar você sobre o
+                  atendimento adequado.
+                </p>
+
+                <a
+                  className="botao botao-principal"
+                  href={whatsappUrl(
+                    'Olá! Tenho um pedido médico e gostaria de saber como realizar o atendimento na ÁgilMed.'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Enviar meu pedido
+                </a>
+              </div>
+
+              <div className="lista-beneficios">
+                <div>
+                  <strong>01</strong>
+                  <span>Orientação sobre o atendimento</span>
+                </div>
+
+                <div>
+                  <strong>02</strong>
+                  <span>Informações sobre documentos</span>
+                </div>
+
+                <div>
+                  <strong>03</strong>
+                  <span>Agendamento de horário</span>
+                </div>
+
+                <div>
+                  <strong>04</strong>
+                  <span>Atendimento organizado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* LINKS */}
+        <section className="secao secao-clara">
+          <div className="container">
+            <div className="cabecalho-secao">
+              <span className="rotulo-secao">
+                Conheça também
+              </span>
+
+              <h2>
+                Outros conteúdos da ÁgilMed
+              </h2>
+
+              <p>
+                Acesse informações, orientações e conteúdos
+                relacionados à saúde e segurança.
+              </p>
+            </div>
+
+            <div className="grade g3">
+              <Link
+                className="cartao cartao-link"
+                href="/para-empresas"
+              >
+                <span className="rotulo">
+                  Empresas
+                </span>
+
+                <h3>
+                  Soluções para empresas
+                </h3>
+
+                <p>
+                  Conheça nossas soluções em saúde ocupacional e
+                  segurança do trabalho.
+                </p>
+
+                <span className="cartao-seta">
+                  Conhecer →
+                </span>
+              </Link>
+
+              <Link
+                className="cartao cartao-link"
+                href="/blog"
+              >
+                <span className="rotulo">
+                  Conteúdo
+                </span>
+
+                <h3>
+                  Blog ÁgilMed
+                </h3>
+
+                <p>
+                  Informação prática para cuidar melhor da sua
+                  saúde.
+                </p>
+
+                <span className="cartao-seta">
+                  Acessar blog →
+                </span>
+              </Link>
+
+              <Link
+                className="cartao cartao-link"
+                href="/contato"
+              >
+                <span className="rotulo">
+                  Fale conosco
+                </span>
+
+                <h3>
+                  Entre em contato
+                </h3>
+
+                <p>
+                  Tire suas dúvidas e fale com nossa equipe.
+                </p>
+
+                <span className="cartao-seta">
+                  Falar conosco →
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA FINAL */}
+        <section className="cta-final">
+          <div className="container">
+            <div className="cta-final-inner">
+              <div>
+                <span className="rotulo-secao">
+                  Pronto para cuidar de você?
+                </span>
+
+                <h2>
+                  Agende seu atendimento na ÁgilMed.
+                </h2>
+
+                <p>
+                  Atendimento particular em Porto Velho, com hora
+                  marcada e cuidado humanizado.
+                </p>
+              </div>
+
+              <a
+                className="botao botao-principal"
+                href={whatsappUrl(
+                  'Olá! Gostaria de agendar um atendimento na ÁgilMed.'
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agendar pelo WhatsApp →
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 }
-
-````
-
-### ⚠️ MUITO IMPORTANTE
-
-No GitHub, o arquivo deve começar assim:
-
-```text
-import Link from 'next/link';
-````
-
-**NÃO assim:**
-
-````text
-```jsx
-import Link from 'next/link';
-````
-
-E também **não deve terminar com**:
-
-```text
-```
-
-```
-
-Aquelas marcações são apenas formatação da minha resposta, **não fazem parte do JavaScript**.
-
-Depois de salvar/commit no GitHub, o Vercel deverá iniciar um novo deploy automaticamente.
-
-**E não crie ainda a página `consulta-clinica`.** Primeiro vamos confirmar que esse build passa. Depois fazemos a nova página sem correr o risco de acumular dois erros ao mesmo tempo.
-```
