@@ -29,11 +29,11 @@ export default function ParaVocePage() {
       <main>
         {/* HERO */}
         <section className="hero">
-          <div className="container hero-grid">
-            <div className="hero-conteudo">
+          <div className="wrap hero-grade">
+            <div className="hero-texto">
               <Trilha itens={trilha} />
 
-              <span className="selo">
+              <span className="rotulo">
                 Atendimento particular em Porto Velho
               </span>
 
@@ -41,16 +41,16 @@ export default function ParaVocePage() {
                 Cuidar da sua saúde pode ser mais simples.
               </h1>
 
-              <p className="hero-texto">
-                Na ÁgilMed, você encontra atendimento particular com hora
-                marcada, profissionais qualificados e uma experiência
-                pensada para cuidar de você de forma humana, rápida e
-                acolhedora.
+              <p className="lede">
+                Na ÁgilMed, você encontra atendimento particular com
+                hora marcada, profissionais qualificados e uma
+                experiência pensada para cuidar de você de forma
+                humana, rápida e acolhedora.
               </p>
 
-              <div className="hero-acoes">
+              <div className="acoes">
                 <a
-                  className="botao botao-principal"
+                  className="btn btn-primario"
                   href={whatsappUrl(
                     'Olá! Gostaria de agendar um atendimento na ÁgilMed.'
                   )}
@@ -61,37 +61,73 @@ export default function ParaVocePage() {
                 </a>
 
                 <a
-                  className="botao botao-secundario"
+                  className="btn btn-secundario"
                   href="#atendimentos"
                 >
                   Conhecer especialidades
                 </a>
               </div>
-
-              <div className="hero-confianca">
-                <span>✓ Hora marcada</span>
-                <span>✓ Atendimento humanizado</span>
-                <span>✓ Sem fila</span>
-              </div>
             </div>
 
-            <div className="hero-card">
-              <span className="hero-card-label">
-                ÁgilMed Ocupacional
-              </span>
+            <div className="boletim">
+              <div className="boletim-topo">
+                <strong>ÁgilMed Ocupacional</strong>
+                <span>ATENDIMENTO</span>
+              </div>
 
-              <strong>
-                Saúde, cuidado e prevenção em um só lugar.
-              </strong>
+              <div className="boletim-corpo">
+                <p className="boletim-legenda">
+                  Saúde, cuidado e prevenção em um só lugar.
+                </p>
 
-              <p>
-                Atendimento particular para você cuidar da sua saúde
-                com mais praticidade e tranquilidade.
-              </p>
+                <div className="boletim-item">
+                  <div className="boletim-item-nome">
+                    <span className="ponto ponto-azul" />
+                    Consulta clínica
+                  </div>
 
-              <div className="hero-card-info">
-                <span>📍 Porto Velho – RO</span>
-                <span>🕐 Atendimento com hora marcada</span>
+                  <span className="boletim-item-data">
+                    Particular
+                  </span>
+                </div>
+
+                <div className="boletim-item">
+                  <div className="boletim-item-nome">
+                    <span className="ponto ponto-verde" />
+                    Fisioterapia
+                  </div>
+
+                  <span className="boletim-item-data">
+                    Particular
+                  </span>
+                </div>
+
+                <div className="boletim-item">
+                  <div className="boletim-item-nome">
+                    <span className="ponto ponto-azul" />
+                    Psicologia
+                  </div>
+
+                  <span className="boletim-item-data">
+                    Particular
+                  </span>
+                </div>
+
+                <div className="boletim-item">
+                  <div className="boletim-item-nome">
+                    <span className="ponto ponto-verde" />
+                    Nutrição
+                  </div>
+
+                  <span className="boletim-item-data">
+                    Particular
+                  </span>
+                </div>
+
+                <div className="boletim-rodape">
+                  <span>✓ Hora marcada</span>
+                  <span>Porto Velho – RO</span>
+                </div>
               </div>
             </div>
           </div>
@@ -102,9 +138,9 @@ export default function ParaVocePage() {
           className="secao"
           id="atendimentos"
         >
-          <div className="container">
-            <div className="cabecalho-secao">
-              <span className="rotulo-secao">
+          <div className="wrap">
+            <div className="secao-cabeca">
+              <span className="rotulo">
                 Atendimento particular
               </span>
 
@@ -112,7 +148,7 @@ export default function ParaVocePage() {
                 Encontre o cuidado que você precisa
               </h2>
 
-              <p>
+              <p className="lede">
                 Escolha uma especialidade e conheça os serviços
                 disponíveis na ÁgilMed.
               </p>
@@ -164,66 +200,135 @@ export default function ParaVocePage() {
         </section>
 
         {/* EXAMES */}
-        <section className="secao secao-clara">
-          <div className="container">
-            <div className="duas-colunas">
+        <section className="secao secao-fundo">
+          <div className="wrap">
+            <div className="grade g2">
               <div>
-                <span className="rotulo-secao">
-                  Exames ocupacionais
-                </span>
+                <div className="secao-cabeca">
+                  <span className="rotulo">
+                    Exames ocupacionais
+                  </span>
 
-                <h2>
-                  Também cuidamos da sua saúde ocupacional
-                </h2>
-
-                <p>
-                  Para empresas, trabalhadores e profissionais que
-                  precisam realizar exames ocupacionais, a ÁgilMed
-                  oferece atendimento organizado e acompanhamento
-                  especializado.
-                </p>
-
-                <div className="lista-check">
-                  <div>✓ Exames admissionais</div>
-                  <div>✓ Exames periódicos</div>
-                  <div>✓ Exames demissionais</div>
-                  <div>✓ Exames de retorno ao trabalho</div>
-                  <div>✓ Exames de mudança de função</div>
+                  <h2>
+                    Também cuidamos da sua saúde ocupacional
+                  </h2>
                 </div>
 
-                <a
-                  className="botao botao-principal"
-                  href={whatsappUrl(
-                    'Olá! Gostaria de informações sobre exames ocupacionais na ÁgilMed.'
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Falar sobre exames
-                </a>
+                <div className="texto">
+                  <p>
+                    Para empresas, trabalhadores e profissionais que
+                    precisam realizar exames ocupacionais, a ÁgilMed
+                    oferece atendimento organizado e acompanhamento
+                    especializado.
+                  </p>
+                </div>
+
+                <div className="lista-checada">
+                  <div className="item-checado">
+                    <span className="ponto ponto-verde" />
+                    <div>
+                      <strong>Exames admissionais</strong>
+                    </div>
+                  </div>
+
+                  <div className="item-checado">
+                    <span className="ponto ponto-verde" />
+                    <div>
+                      <strong>Exames periódicos</strong>
+                    </div>
+                  </div>
+
+                  <div className="item-checado">
+                    <span className="ponto ponto-verde" />
+                    <div>
+                      <strong>Exames demissionais</strong>
+                    </div>
+                  </div>
+
+                  <div className="item-checado">
+                    <span className="ponto ponto-verde" />
+                    <div>
+                      <strong>Retorno ao trabalho</strong>
+                    </div>
+                  </div>
+
+                  <div className="item-checado">
+                    <span className="ponto ponto-verde" />
+                    <div>
+                      <strong>Mudança de função</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="acoes">
+                  <a
+                    className="btn btn-primario"
+                    href={whatsappUrl(
+                      'Olá! Gostaria de informações sobre exames ocupacionais na ÁgilMed.'
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Falar sobre exames
+                  </a>
+                </div>
               </div>
 
-              <div className="painel-destaque">
-                <span className="painel-icone">+</span>
+              <div className="boletim">
+                <div className="boletim-topo">
+                  <strong>Saúde ocupacional</strong>
+                  <span>ÁGILMED</span>
+                </div>
 
-                <h3>
-                  Saúde ocupacional com agilidade
-                </h3>
+                <div className="boletim-corpo">
+                  <p className="boletim-legenda">
+                    Atendimento organizado para facilitar a rotina
+                    de trabalhadores e empresas.
+                  </p>
 
-                <p>
-                  Atendimento organizado para facilitar a rotina
-                  de trabalhadores e empresas.
-                </p>
+                  <div className="boletim-item">
+                    <div className="boletim-item-nome">
+                      <span className="ponto ponto-verde" />
+                      Atendimento
+                    </div>
+
+                    <span className="boletim-item-data">
+                      Organizado
+                    </span>
+                  </div>
+
+                  <div className="boletim-item">
+                    <div className="boletim-item-nome">
+                      <span className="ponto ponto-azul" />
+                      Agendamento
+                    </div>
+
+                    <span className="boletim-item-data">
+                      Hora marcada
+                    </span>
+                  </div>
+
+                  <div className="boletim-item">
+                    <div className="boletim-item-nome">
+                      <span className="ponto ponto-verde" />
+                      Orientação
+                    </div>
+
+                    <span className="boletim-item-data">
+                      Equipe ÁgilMed
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* DIFERENCIAL */}
+        {/* DIFERENCIAIS */}
         <section className="secao">
-          <div className="container">
-            <div className="cabecalho-secao">
-              <span className="rotulo-secao">
+          <div className="wrap">
+            <div className="secao-cabeca">
+              <span className="rotulo">
                 Por que escolher a ÁgilMed?
               </span>
 
@@ -231,23 +336,23 @@ export default function ParaVocePage() {
                 Uma experiência diferente de cuidar da saúde
               </h2>
 
-              <p>
+              <p className="lede">
                 Nosso atendimento foi pensado para oferecer
                 praticidade sem abrir mão do cuidado humano.
               </p>
             </div>
 
             <div className="grade g4">
-              <article className="mini-card">
-                <span>01</span>
+              <article className="cartao">
+                <span className="rotulo">01</span>
                 <h3>Hora marcada</h3>
                 <p>
                   Mais organização para você não perder tempo.
                 </p>
               </article>
 
-              <article className="mini-card">
-                <span>02</span>
+              <article className="cartao">
+                <span className="rotulo">02</span>
                 <h3>Atendimento humanizado</h3>
                 <p>
                   Você é tratado como pessoa, não apenas como
@@ -255,8 +360,8 @@ export default function ParaVocePage() {
                 </p>
               </article>
 
-              <article className="mini-card">
-                <span>03</span>
+              <article className="cartao">
+                <span className="rotulo">03</span>
                 <h3>Profissionais qualificados</h3>
                 <p>
                   Atendimento realizado por profissionais
@@ -264,8 +369,8 @@ export default function ParaVocePage() {
                 </p>
               </article>
 
-              <article className="mini-card">
-                <span>04</span>
+              <article className="cartao">
+                <span className="rotulo">04</span>
                 <h3>Praticidade</h3>
                 <p>
                   Agendamento simples e comunicação rápida.
@@ -276,10 +381,10 @@ export default function ParaVocePage() {
         </section>
 
         {/* COMO FUNCIONA */}
-        <section className="secao secao-clara">
-          <div className="container">
-            <div className="cabecalho-secao">
-              <span className="rotulo-secao">
+        <section className="secao secao-fundo">
+          <div className="wrap">
+            <div className="secao-cabeca">
+              <span className="rotulo">
                 Como funciona
               </span>
 
@@ -288,9 +393,9 @@ export default function ParaVocePage() {
               </h2>
             </div>
 
-            <div className="passos">
-              <div className="passo">
-                <span>1</span>
+            <div className="lista-checada">
+              <div className="item-checado">
+                <span className="rotulo">01</span>
 
                 <div>
                   <h3>Escolha o atendimento</h3>
@@ -301,8 +406,8 @@ export default function ParaVocePage() {
                 </div>
               </div>
 
-              <div className="passo">
-                <span>2</span>
+              <div className="item-checado">
+                <span className="rotulo">02</span>
 
                 <div>
                   <h3>Entre em contato</h3>
@@ -313,8 +418,8 @@ export default function ParaVocePage() {
                 </div>
               </div>
 
-              <div className="passo">
-                <span>3</span>
+              <div className="item-checado">
+                <span className="rotulo">03</span>
 
                 <div>
                   <h3>Escolha o melhor horário</h3>
@@ -325,8 +430,8 @@ export default function ParaVocePage() {
                 </div>
               </div>
 
-              <div className="passo">
-                <span>4</span>
+              <div className="item-checado">
+                <span className="rotulo">04</span>
 
                 <div>
                   <h3>Compareça à ÁgilMed</h3>
@@ -340,58 +445,80 @@ export default function ParaVocePage() {
           </div>
         </section>
 
-        {/* PARA QUEM JÁ TEM PEDIDO */}
+        {/* PEDIDO MÉDICO */}
         <section className="secao">
-          <div className="container">
-            <div className="duas-colunas">
+          <div className="wrap">
+            <div className="grade g2">
               <div>
-                <span className="rotulo-secao">
-                  Já possui um pedido?
-                </span>
+                <div className="secao-cabeca">
+                  <span className="rotulo">
+                    Já possui um pedido?
+                  </span>
 
-                <h2>
-                  Precisa realizar um exame ou atendimento
-                  específico?
-                </h2>
+                  <h2>
+                    Precisa realizar um exame ou atendimento
+                    específico?
+                  </h2>
+                </div>
 
-                <p>
-                  Se você já possui uma solicitação médica ou
-                  orientação profissional, entre em contato com
-                  nossa equipe. Vamos orientar você sobre o
-                  atendimento adequado.
-                </p>
+                <div className="texto">
+                  <p>
+                    Se você já possui uma solicitação médica ou
+                    orientação profissional, entre em contato com
+                    nossa equipe. Vamos orientar você sobre o
+                    atendimento adequado.
+                  </p>
+                </div>
 
-                <a
-                  className="botao botao-principal"
-                  href={whatsappUrl(
-                    'Olá! Tenho um pedido médico e gostaria de saber como realizar o atendimento na ÁgilMed.'
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Enviar meu pedido
-                </a>
+                <div className="acoes">
+                  <a
+                    className="btn btn-primario"
+                    href={whatsappUrl(
+                      'Olá! Tenho um pedido médico e gostaria de saber como realizar o atendimento na ÁgilMed.'
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Enviar meu pedido
+                  </a>
+                </div>
               </div>
 
-              <div className="lista-beneficios">
-                <div>
-                  <strong>01</strong>
-                  <span>Orientação sobre o atendimento</span>
+              <div className="lista-checada">
+                <div className="item-checado">
+                  <span className="rotulo">01</span>
+                  <div>
+                    <strong>
+                      Orientação sobre o atendimento
+                    </strong>
+                  </div>
                 </div>
 
-                <div>
-                  <strong>02</strong>
-                  <span>Informações sobre documentos</span>
+                <div className="item-checado">
+                  <span className="rotulo">02</span>
+                  <div>
+                    <strong>
+                      Informações sobre documentos
+                    </strong>
+                  </div>
                 </div>
 
-                <div>
-                  <strong>03</strong>
-                  <span>Agendamento de horário</span>
+                <div className="item-checado">
+                  <span className="rotulo">03</span>
+                  <div>
+                    <strong>
+                      Agendamento de horário
+                    </strong>
+                  </div>
                 </div>
 
-                <div>
-                  <strong>04</strong>
-                  <span>Atendimento organizado</span>
+                <div className="item-checado">
+                  <span className="rotulo">04</span>
+                  <div>
+                    <strong>
+                      Atendimento organizado
+                    </strong>
+                  </div>
                 </div>
               </div>
             </div>
@@ -399,10 +526,10 @@ export default function ParaVocePage() {
         </section>
 
         {/* LINKS */}
-        <section className="secao secao-clara">
-          <div className="container">
-            <div className="cabecalho-secao">
-              <span className="rotulo-secao">
+        <section className="secao secao-fundo">
+          <div className="wrap">
+            <div className="secao-cabeca">
+              <span className="rotulo">
                 Conheça também
               </span>
 
@@ -410,7 +537,7 @@ export default function ParaVocePage() {
                 Outros conteúdos da ÁgilMed
               </h2>
 
-              <p>
+              <p className="lede">
                 Acesse informações, orientações e conteúdos
                 relacionados à saúde e segurança.
               </p>
@@ -486,11 +613,11 @@ export default function ParaVocePage() {
         </section>
 
         {/* CTA FINAL */}
-        <section className="cta-final">
-          <div className="container">
-            <div className="cta-final-inner">
+        <section className="secao secao-escura">
+          <div className="wrap">
+            <div className="grade g2">
               <div>
-                <span className="rotulo-secao">
+                <span className="rotulo">
                   Pronto para cuidar de você?
                 </span>
 
@@ -504,16 +631,18 @@ export default function ParaVocePage() {
                 </p>
               </div>
 
-              <a
-                className="botao botao-principal"
-                href={whatsappUrl(
-                  'Olá! Gostaria de agendar um atendimento na ÁgilMed.'
-                )}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Agendar pelo WhatsApp →
-              </a>
+              <div className="acoes">
+                <a
+                  className="btn btn-claro"
+                  href={whatsappUrl(
+                    'Olá! Gostaria de agendar um atendimento na ÁgilMed.'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Agendar pelo WhatsApp →
+                </a>
+              </div>
             </div>
           </div>
         </section>
