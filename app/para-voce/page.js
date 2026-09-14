@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { especialidades } from '@/lib/especialidades';
 import {
-  site,
   whatsappUrl,
   metadadosPagina,
   jsonLdBreadcrumb,
@@ -255,7 +254,7 @@ export default function ParaVocePage() {
                   <div className="item-checado">
                     <span className="ponto ponto-verde" />
                     <div>
-                      <strong>Mudança de função</strong>
+                      <strong>Mudança de riscos</strong>
                     </div>
                   </div>
                 </div>
@@ -345,7 +344,9 @@ export default function ParaVocePage() {
             <div className="grade g4">
               <article className="cartao">
                 <span className="rotulo">01</span>
+
                 <h3>Hora marcada</h3>
+
                 <p>
                   Mais organização para você não perder tempo.
                 </p>
@@ -353,7 +354,9 @@ export default function ParaVocePage() {
 
               <article className="cartao">
                 <span className="rotulo">02</span>
+
                 <h3>Atendimento humanizado</h3>
+
                 <p>
                   Você é tratado como pessoa, não apenas como
                   paciente.
@@ -362,7 +365,9 @@ export default function ParaVocePage() {
 
               <article className="cartao">
                 <span className="rotulo">03</span>
+
                 <h3>Profissionais qualificados</h3>
+
                 <p>
                   Atendimento realizado por profissionais
                   preparados.
@@ -371,7 +376,9 @@ export default function ParaVocePage() {
 
               <article className="cartao">
                 <span className="rotulo">04</span>
+
                 <h3>Praticidade</h3>
+
                 <p>
                   Agendamento simples e comunicação rápida.
                 </p>
@@ -399,6 +406,7 @@ export default function ParaVocePage() {
 
                 <div>
                   <h3>Escolha o atendimento</h3>
+
                   <p>
                     Encontre a especialidade ou serviço que você
                     precisa.
@@ -411,6 +419,7 @@ export default function ParaVocePage() {
 
                 <div>
                   <h3>Entre em contato</h3>
+
                   <p>
                     Fale conosco pelo WhatsApp e informe o
                     atendimento desejado.
@@ -423,6 +432,7 @@ export default function ParaVocePage() {
 
                 <div>
                   <h3>Escolha o melhor horário</h3>
+
                   <p>
                     Nossa equipe verifica a disponibilidade e
                     orienta você.
@@ -435,6 +445,7 @@ export default function ParaVocePage() {
 
                 <div>
                   <h3>Compareça à ÁgilMed</h3>
+
                   <p>
                     Chegue no horário combinado e tenha uma
                     experiência tranquila.
@@ -487,6 +498,7 @@ export default function ParaVocePage() {
               <div className="lista-checada">
                 <div className="item-checado">
                   <span className="rotulo">01</span>
+
                   <div>
                     <strong>
                       Orientação sobre o atendimento
@@ -496,6 +508,7 @@ export default function ParaVocePage() {
 
                 <div className="item-checado">
                   <span className="rotulo">02</span>
+
                   <div>
                     <strong>
                       Informações sobre documentos
@@ -505,6 +518,7 @@ export default function ParaVocePage() {
 
                 <div className="item-checado">
                   <span className="rotulo">03</span>
+
                   <div>
                     <strong>
                       Agendamento de horário
@@ -514,6 +528,7 @@ export default function ParaVocePage() {
 
                 <div className="item-checado">
                   <span className="rotulo">04</span>
+
                   <div>
                     <strong>
                       Atendimento organizado
