@@ -24,7 +24,7 @@ const trilha = [
 export default function ParaVocePage() {
   return (
     <>
-      <JsonLd data={jsonLdBreadcrumb(trilha)} />
+      <JsonLd dados={jsonLdBreadcrumb(trilha)} />
 
       <main>
         {/* HERO */}
