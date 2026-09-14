@@ -1,4 +1,3 @@
-```jsx
 import Link from 'next/link';
 import { especialidades } from '@/lib/especialidades';
 import {
