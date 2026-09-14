@@ -1,3 +1,4 @@
+```jsx
 import Link from 'next/link';
 import { especialidades } from '@/lib/especialidades';
 import {
@@ -106,6 +107,7 @@ export default function ParaVoce() {
         <div className="wrap">
           <div className="secao-cabeca">
             <h2>Encontre o atendimento que você precisa</h2>
+
             <p>
               Atendimento particular para diferentes necessidades de saúde,
               sempre com hora marcada.
@@ -131,13 +133,10 @@ export default function ParaVoce() {
               </Link>
             ))}
 
-            <a
+            {/* CONSULTA CLÍNICA */}
+            <Link
               className="cartao cartao-link"
-              href={whatsappUrl(
-                'Olá! Gostaria de agendar uma consulta clínica na ÁgilMed.'
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/para-voce/consulta-clinica"
             >
               <span className="rotulo">Medicina</span>
 
@@ -149,9 +148,9 @@ export default function ParaVoce() {
               </p>
 
               <span className="cartao-seta">
-                Agendar consulta →
+                Ver detalhes →
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -504,3 +503,14 @@ export default function ParaVoce() {
     </>
   );
 }
+```
+
+**Importante:** esse arquivo agora está correto para que **Consulta clínica não abra mais o WhatsApp diretamente**.
+
+O próximo arquivo que precisamos criar é:
+
+```text
+app/para-voce/consulta-clinica/page.js
+```
+
+É nele que vamos colocar a página completa da consulta, com **informações, benefícios, como funciona, perguntas frequentes e o botão final de WhatsApp**.
