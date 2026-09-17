@@ -126,6 +126,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section style={{ borderBottom: '1px solid var(--linha)', background: 'var(--fundo)' }}>
+        <div
+          className="wrap"
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 16,
+            paddingBlock: 18,
+          }}
+        >
+          <p style={{ fontSize: 15, color: 'var(--tinta-3)', margin: 0 }}>
+            <strong style={{ color: 'var(--tinta)' }}>Já é cliente?</strong> Abra um chamado e
+            acompanhe o andamento no Portal do Cliente.
+          </p>
+          <a
+            className="btn btn-primario btn-pequeno"
+            href={site.portalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Entrar no Portal do Cliente
+          </a>
+        </div>
+      </section>
+
       <section className="secao">
         <div className="wrap hero-grade">
           <div className="hero-texto">
