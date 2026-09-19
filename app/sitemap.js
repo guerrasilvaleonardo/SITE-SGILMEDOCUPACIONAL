@@ -3,7 +3,7 @@ export const dynamic = 'force-static';
 import { site } from '@/lib/site';
 import { exames, urlExame } from '@/lib/exames';
 import { especialidades } from '@/lib/especialidades';
-import { posts } from '@/lib/posts';
+import { postsPublicados } from '@/lib/posts';
 
 export default function sitemap() {
   const agora = new Date();
@@ -43,7 +43,7 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 0.9,
     })),
-    ...posts.map((p) => ({
+    ...postsPublicados().map((p) => ({
       url: `${site.url}/blog/${p.slug}`,
       lastModified: new Date(p.data),
       changeFrequency: 'yearly',

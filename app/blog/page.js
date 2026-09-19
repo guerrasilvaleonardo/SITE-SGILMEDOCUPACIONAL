@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { posts } from '@/lib/posts';
+import { postsPublicados } from '@/lib/posts';
 import { metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
@@ -36,7 +36,7 @@ export default function Blog() {
 
       <section style={{ paddingBottom: 72 }}>
         <div className="wrap grade g3">
-          {posts.map((p) => (
+          {postsPublicados().map((p) => (
             <Link className="cartao cartao-link" href={`/blog/${p.slug}`} key={p.slug}>
               <span className="chip">{p.territorio}</span>
               <h3 style={{ fontSize: 21, marginTop: 6 }}>{p.titulo}</h3>

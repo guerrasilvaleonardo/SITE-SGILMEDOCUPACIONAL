@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { posts, getPost } from '@/lib/posts';
+import { postsPublicados, getPost } from '@/lib/posts';
 import { site, metadadosPagina, jsonLdBreadcrumb } from '@/lib/site';
 import Trilha from '@/components/Trilha';
 import JsonLd from '@/components/JsonLd';
@@ -9,7 +9,7 @@ import Compartilhar from '@/components/Compartilhar';
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return posts.map((p) => ({ post: p.slug }));
+  return postsPublicados().map((p) => ({ post: p.slug }));
 }
 
 export function generateMetadata({ params }) {
